@@ -1,0 +1,756 @@
+/* ==================================================
+   PÁGINA DGGA
+================================================== */
+
+
+/* ==================================================
+   NAVEGACIÓN ACTIVA
+================================================== */
+
+.nav__current {
+  color: var(--azul) !important;
+}
+
+
+.nav__current::after {
+  width: 100% !important;
+}
+
+
+
+/* ==================================================
+   HERO INTERNO
+================================================== */
+
+.dgga-hero {
+  position: relative;
+
+  min-height: 280px;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  background-image:
+    url("img/hero-dgga.jpg");
+
+  background-position: center;
+  background-size: cover;
+
+  border-bottom: 1px solid var(--borde);
+}
+
+
+.dgga-hero__overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(236, 237, 239, 0.97) 0%,
+      rgba(236, 237, 239, 0.90) 40%,
+      rgba(236, 237, 239, 0.58) 70%,
+      rgba(236, 237, 239, 0.25) 100%
+    );
+}
+
+
+.dgga-hero__content {
+  position: relative;
+
+  z-index: 1;
+}
+
+
+.dgga-hero__label {
+  margin-bottom: 12px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  color: var(--gris);
+
+  font-size: 0.74rem;
+  font-weight: 700;
+
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+
+.dgga-hero__label::before {
+  content: "";
+
+  width: 28px;
+  height: 3px;
+
+  flex-shrink: 0;
+
+  border-radius: 20px;
+
+  background-color: var(--naranja);
+}
+
+
+.dgga-hero h1 {
+  max-width: 700px;
+
+  color: var(--azul-oscuro);
+
+  font-size: clamp(2rem, 4vw, 3.15rem);
+  font-weight: 700;
+
+  line-height: 1.12;
+
+  letter-spacing: -0.025em;
+}
+
+
+
+/* ==================================================
+   MISIÓN Y VISIÓN
+================================================== */
+
+.institution-section {
+  padding: 62px 0;
+}
+
+
+.institution-section--mission {
+  background-color: #ffffff;
+}
+
+
+.institution-section--vision {
+  background-color: #f6f7f8;
+}
+
+
+.institution-layout {
+  display: grid;
+
+  grid-template-columns: 280px minmax(0, 1fr);
+
+  gap: 80px;
+}
+
+
+.institution-heading {
+  position: relative;
+}
+
+
+.institution-heading::before {
+  content: "";
+
+  display: block;
+
+  width: 46px;
+  height: 5px;
+
+  margin-bottom: 18px;
+
+  border-radius: 20px;
+
+  background-color: var(--naranja);
+}
+
+
+.institution-heading__number {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: var(--gris);
+
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+}
+
+
+.institution-heading h2 {
+  color: var(--azul-oscuro);
+
+  font-size: 2.55rem;
+  font-weight: 700;
+
+  line-height: 1.1;
+}
+
+
+.institution-content {
+  max-width: 760px;
+
+  color: var(--texto);
+
+  font-size: 0.98rem;
+
+  line-height: 1.8;
+}
+
+
+.institution-content p {
+  margin-bottom: 23px;
+}
+
+
+.institution-content p:last-child {
+  margin-bottom: 0;
+}
+
+
+.institution-content strong {
+  color: #334967;
+
+  font-weight: 700;
+}
+
+
+.institution-list {
+  margin: 5px 0 27px;
+
+  padding: 0;
+
+  list-style: none;
+}
+
+
+.institution-list li {
+  position: relative;
+
+  margin-bottom: 18px;
+
+  padding-left: 27px;
+}
+
+
+.institution-list li::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0.72em;
+  left: 2px;
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background-color: var(--naranja);
+}
+
+
+
+/* ==================================================
+   VALORES
+================================================== */
+
+.values-section {
+  padding: 68px 0;
+
+  background-color: #ffffff;
+}
+
+
+.institution-title {
+  margin-bottom: 40px;
+
+  text-align: center;
+}
+
+
+.institution-title__accent {
+  display: block;
+
+  width: 50px;
+  height: 5px;
+
+  margin: 0 auto 12px;
+
+  border-radius: 20px;
+
+  background-color: var(--naranja);
+}
+
+
+.institution-title p {
+  margin-bottom: 4px;
+
+  color: var(--gris);
+
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+}
+
+
+.institution-title h2 {
+  color: var(--azul-oscuro);
+
+  font-size: 2.35rem;
+  font-weight: 700;
+}
+
+
+.values-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+}
+
+
+.value-card {
+  position: relative;
+
+  padding: 28px 26px;
+
+  overflow: hidden;
+
+  background-color: #f8f9fa;
+
+  border: 1px solid var(--borde);
+
+  border-radius: 14px;
+}
+
+
+.value-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 3px;
+
+  background-color: var(--naranja);
+}
+
+
+.value-card h3 {
+  margin-bottom: 12px;
+
+  color: var(--azul-oscuro);
+
+  font-size: 1rem;
+  font-weight: 700;
+
+  line-height: 1.35;
+}
+
+
+.value-card p {
+  color: var(--gris-texto);
+
+  font-size: 0.82rem;
+
+  line-height: 1.65;
+}
+
+
+
+/* ==================================================
+   POLÍTICA DE LA CALIDAD
+================================================== */
+
+.quality-section {
+  padding: 70px 0;
+
+  background-color: #f2f4f6;
+}
+
+
+.quality-header {
+  margin-bottom: 30px;
+
+  text-align: center;
+}
+
+
+.quality-header::before {
+  content: "";
+
+  display: block;
+
+  width: 52px;
+  height: 5px;
+
+  margin: 0 auto 12px;
+
+  border-radius: 20px;
+
+  background-color: var(--naranja);
+}
+
+
+.quality-header__number {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: var(--gris);
+
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+}
+
+
+.quality-header h2 {
+  color: var(--azul-oscuro);
+
+  font-size: 2.3rem;
+  font-weight: 700;
+
+  line-height: 1.15;
+}
+
+
+.quality-intro {
+  max-width: 880px;
+
+  margin: 0 auto 38px;
+
+  padding: 32px 34px;
+
+  background-color: #ffffff;
+
+  border-left: 5px solid var(--naranja);
+
+  border-radius: 4px 14px 14px 4px;
+
+  box-shadow:
+    0 8px 24px
+    rgba(27, 56, 89, 0.06);
+
+  color: var(--texto);
+
+  font-size: 0.91rem;
+
+  line-height: 1.75;
+}
+
+
+.quality-intro p {
+  margin-bottom: 18px;
+}
+
+
+.quality-intro p:last-child {
+  margin-bottom: 0;
+}
+
+
+
+/* ==================================================
+   ACORDEÓN
+================================================== */
+
+.quality-accordion {
+  max-width: 880px;
+
+  margin: 0 auto;
+}
+
+
+.quality-item {
+  margin-bottom: 10px;
+
+  overflow: hidden;
+
+  background-color: #ffffff;
+
+  border: 1px solid var(--borde);
+
+  border-radius: 11px;
+}
+
+
+.quality-item summary {
+  position: relative;
+
+  min-height: 62px;
+
+  padding: 17px 54px 17px 20px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  color: var(--azul-oscuro);
+
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  list-style: none;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+
+.quality-item summary::-webkit-details-marker {
+  display: none;
+}
+
+
+.quality-item summary:hover {
+  background-color: #f8f9fa;
+}
+
+
+.quality-item summary > span {
+  min-width: 30px;
+
+  color: var(--naranja);
+
+  font-size: 0.77rem;
+  font-weight: 700;
+}
+
+
+.quality-item summary::after {
+  content: "+";
+
+  position: absolute;
+
+  right: 21px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: var(--naranja);
+
+  font-size: 1.45rem;
+  font-weight: 400;
+
+  line-height: 1;
+}
+
+
+.quality-item[open] summary::after {
+  content: "−";
+}
+
+
+.quality-item[open] summary {
+  background-color: #f8f9fa;
+}
+
+
+.quality-item__content {
+  padding: 4px 54px 22px 64px;
+
+  color: var(--gris-texto);
+
+  font-size: 0.88rem;
+
+  line-height: 1.7;
+}
+
+
+.quality-item__content strong {
+  color: var(--texto);
+}
+
+
+.quality-closing {
+  max-width: 880px;
+
+  margin: 34px auto 0;
+
+  color: var(--gris-texto);
+
+  font-size: 0.87rem;
+
+  line-height: 1.75;
+}
+
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 900px) {
+
+  .institution-layout {
+    grid-template-columns: 200px 1fr;
+
+    gap: 45px;
+  }
+
+
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 640px) {
+
+  .dgga-hero {
+    min-height: 220px;
+  }
+
+
+  .dgga-hero__overlay {
+    background:
+      rgba(236, 237, 239, 0.84);
+  }
+
+
+  .dgga-hero h1 {
+    max-width: 500px;
+
+    font-size: 2rem;
+  }
+
+
+  .institution-section {
+    padding: 45px 0;
+  }
+
+
+  .institution-layout {
+    grid-template-columns: 1fr;
+
+    gap: 24px;
+  }
+
+
+  .institution-heading h2 {
+    font-size: 2rem;
+  }
+
+
+  .institution-content {
+    font-size: 0.9rem;
+
+    line-height: 1.72;
+  }
+
+
+  .institution-list li {
+    padding-left: 23px;
+  }
+
+
+  .values-section {
+    padding: 48px 0 52px;
+  }
+
+
+  .institution-title {
+    margin-bottom: 28px;
+  }
+
+
+  .institution-title h2 {
+    font-size: 1.85rem;
+  }
+
+
+  .values-grid {
+    grid-template-columns: 1fr;
+
+    gap: 13px;
+  }
+
+
+  .value-card {
+    padding: 23px 21px;
+  }
+
+
+  .quality-section {
+    padding: 50px 0 54px;
+  }
+
+
+  .quality-header {
+    margin-bottom: 26px;
+  }
+
+
+  .quality-header h2 {
+    font-size: 1.85rem;
+  }
+
+
+  .quality-intro {
+    margin-bottom: 28px;
+
+    padding: 24px 21px;
+
+    font-size: 0.85rem;
+
+    line-height: 1.7;
+  }
+
+
+  .quality-item summary {
+    min-height: 58px;
+
+    padding: 15px 46px 15px 17px;
+
+    gap: 9px;
+
+    font-size: 0.84rem;
+  }
+
+
+  .quality-item summary > span {
+    min-width: 25px;
+
+    font-size: 0.72rem;
+  }
+
+
+  .quality-item summary::after {
+    right: 16px;
+  }
+
+
+  .quality-item__content {
+    padding: 3px 18px 20px 51px;
+
+    font-size: 0.83rem;
+
+    line-height: 1.65;
+  }
+
+
+  .quality-closing {
+    margin-top: 28px;
+
+    font-size: 0.82rem;
+
+    line-height: 1.7;
+  }
+
+}
