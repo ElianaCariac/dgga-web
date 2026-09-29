@@ -1,0 +1,740 @@
+/* ==================================================
+   PÁGINA YA FINALICÉ
+================================================== */
+
+
+/* ==================================================
+   HERO
+================================================== */
+
+.journey-hero {
+  padding: 38px 0 54px;
+
+  background:
+    linear-gradient(
+      120deg,
+      #f3f5f7 0%,
+      #f8f9fa 60%,
+      #ffffff 100%
+    );
+
+  border-bottom: 1px solid var(--borde);
+}
+
+
+.journey-back {
+  display: inline-block;
+
+  margin-bottom: 28px;
+
+  color: var(--gris-texto);
+
+  font-size: 0.78rem;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+
+.journey-back:hover {
+  color: var(--azul);
+}
+
+
+/* HERO LAYOUT */
+
+.journey-hero__layout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.15fr)
+    minmax(320px, 0.85fr);
+
+  gap: 65px;
+
+  align-items: center;
+}
+
+
+.journey-hero__content {
+  min-width: 0;
+}
+
+
+.journey-hero__label {
+  margin-bottom: 11px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: var(--gris);
+
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  letter-spacing: 0.09em;
+
+  text-transform: uppercase;
+}
+
+
+.journey-hero__label::before {
+  content: "";
+
+  width: 31px;
+  height: 4px;
+
+  flex-shrink: 0;
+
+  border-radius: 20px;
+
+  background-color: var(--naranja);
+}
+
+
+.journey-hero h1 {
+  margin-bottom: 17px;
+
+  color: var(--azul-oscuro);
+
+  font-size:
+    clamp(
+      2.5rem,
+      4.5vw,
+      3.65rem
+    );
+
+  font-weight: 700;
+
+  line-height: 1.06;
+
+  letter-spacing: -0.035em;
+}
+
+
+.journey-hero__description {
+  max-width: 570px;
+
+  color: var(--gris-texto);
+
+  font-size: 0.95rem;
+
+  line-height: 1.75;
+}
+
+
+/* FOTO */
+
+.journey-hero__image {
+  width: 100%;
+  height: 285px;
+
+  overflow: hidden;
+
+  border-radius: 17px;
+
+  box-shadow:
+    0 12px 32px
+    rgba(27, 56, 89, 0.11);
+}
+
+
+.journey-hero__image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+
+
+/* ==================================================
+   ACCIONES PRINCIPALES
+================================================== */
+
+.graduate-section {
+  padding: 68px 0 78px;
+
+  background-color: #ffffff;
+}
+
+
+/* ENCABEZADO */
+
+.graduate-heading {
+  max-width: 720px;
+
+  margin: 0 auto 38px;
+
+  text-align: center;
+}
+
+
+.graduate-heading__eyebrow {
+  margin-bottom: 7px;
+
+  color: var(--naranja);
+
+  font-size: 0.7rem;
+  font-weight: 700;
+
+  letter-spacing: 0.07em;
+
+  text-transform: uppercase;
+}
+
+
+.graduate-heading h2 {
+  margin-bottom: 10px;
+
+  color: var(--azul-oscuro);
+
+  font-size:
+    clamp(
+      1.55rem,
+      2.6vw,
+      2rem
+    );
+
+  font-weight: 700;
+
+  line-height: 1.25;
+}
+
+
+.graduate-heading > p:last-child {
+  max-width: 570px;
+
+  margin: 0 auto;
+
+  color: var(--gris-texto);
+
+  font-size: 0.86rem;
+
+  line-height: 1.65;
+}
+
+
+
+/* ==================================================
+   GRID
+================================================== */
+
+.graduate-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 17px;
+}
+
+
+
+/* ==================================================
+   TARJETAS
+================================================== */
+
+.graduate-card {
+  position: relative;
+
+  min-height: 225px;
+
+  padding: 27px 28px 24px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  color: inherit;
+
+  text-decoration: none;
+
+  background-color: #f8f9fa;
+
+  border: 1px solid var(--borde);
+
+  border-radius: 14px;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+
+.graduate-card:hover {
+  transform: translateY(-3px);
+
+  background-color: #ffffff;
+
+  border-color:
+    rgba(26, 88, 163, 0.26);
+
+  box-shadow:
+    0 11px 28px
+    rgba(27, 56, 89, 0.08);
+}
+
+
+.graduate-card:focus-visible {
+  outline:
+    3px solid
+    rgba(230, 140, 89, 0.35);
+
+  outline-offset: 3px;
+}
+
+
+.graduate-card__number {
+  margin-bottom: 25px;
+
+  color: var(--naranja);
+
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  letter-spacing: 0.05em;
+}
+
+
+.graduate-card__content {
+  flex: 1;
+}
+
+
+.graduate-card h3 {
+  margin-bottom: 9px;
+
+  color: var(--azul-oscuro);
+
+  font-size: 1.12rem;
+  font-weight: 700;
+}
+
+
+.graduate-card p {
+  max-width: 430px;
+
+  color: var(--gris-texto);
+
+  font-size: 0.83rem;
+
+  line-height: 1.65;
+}
+
+
+.graduate-card__action {
+  margin-top: 23px;
+
+  color: var(--azul);
+
+  font-size: 0.77rem;
+  font-weight: 600;
+}
+
+
+.graduate-card:hover
+.graduate-card__action {
+  color: var(--naranja);
+}
+
+
+
+/* ==================================================
+   RECURSOS
+================================================== */
+
+.graduate-resources {
+  padding: 62px 0 68px;
+
+  background-color: #f3f5f7;
+}
+
+
+.graduate-resources__heading {
+  margin-bottom: 25px;
+}
+
+
+.graduate-resources__heading h2 {
+  color: var(--azul-oscuro);
+
+  font-size: 1.55rem;
+  font-weight: 700;
+}
+
+
+.resource-list {
+  overflow: hidden;
+
+  background-color: #ffffff;
+
+  border: 1px solid var(--borde);
+
+  border-radius: 13px;
+}
+
+
+.resource-link {
+  min-height: 80px;
+
+  padding: 18px 23px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 25px;
+
+  color: inherit;
+
+  text-decoration: none;
+
+  border-bottom:
+    1px solid var(--borde);
+
+  transition:
+    background-color 0.2s ease,
+    padding-left 0.2s ease;
+}
+
+
+.resource-link:last-child {
+  border-bottom: none;
+}
+
+
+.resource-link:hover {
+  padding-left: 28px;
+
+  background-color: #fafbfc;
+}
+
+
+.resource-link div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+
+.resource-link strong {
+  color: var(--azul-oscuro);
+
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+
+.resource-link span {
+  color: var(--gris-texto);
+
+  font-size: 0.76rem;
+
+  line-height: 1.5;
+}
+
+
+.resource-link > span {
+  flex-shrink: 0;
+
+  color: var(--naranja);
+
+  font-size: 1.05rem;
+}
+
+
+
+/* ==================================================
+   DESTACADO
+================================================== */
+
+.special-graduate {
+  padding: 60px 0;
+
+  background-color: #ffffff;
+}
+
+
+.special-graduate__box {
+  padding: 31px 35px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 40px;
+
+  background-color: #f8f9fa;
+
+  border-left:
+    5px solid var(--naranja);
+
+  border-radius:
+    4px 13px 13px 4px;
+}
+
+
+.special-graduate__content {
+  max-width: 690px;
+}
+
+
+.special-graduate__label {
+  margin-bottom: 6px;
+
+  color: var(--naranja);
+
+  font-size: 0.7rem;
+  font-weight: 700;
+
+  letter-spacing: 0.07em;
+
+  text-transform: uppercase;
+}
+
+
+.special-graduate h2 {
+  margin-bottom: 8px;
+
+  color: var(--azul-oscuro);
+
+  font-size: 1.35rem;
+  font-weight: 700;
+
+  line-height: 1.35;
+}
+
+
+.special-graduate__content
+> p:last-child {
+  color: var(--gris-texto);
+
+  font-size: 0.83rem;
+
+  line-height: 1.65;
+}
+
+
+.special-graduate__button {
+  flex-shrink: 0;
+
+  padding: 12px 19px;
+
+  color: #ffffff;
+
+  font-size: 0.78rem;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  background-color: var(--azul);
+
+  border-radius: 7px;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.special-graduate__button:hover {
+  transform: translateY(-1px);
+
+  background-color: var(--azul-oscuro);
+}
+
+
+.special-graduate__button span {
+  margin-left: 7px;
+}
+
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 900px) {
+
+  .journey-hero__layout {
+    grid-template-columns:
+      1fr 0.8fr;
+
+    gap: 35px;
+  }
+
+
+  .journey-hero__image {
+    height: 250px;
+  }
+
+}
+
+
+
+@media (max-width: 800px) {
+
+  .graduate-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .graduate-card {
+    min-height: 0;
+  }
+
+
+  .special-graduate__box {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+}
+
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 640px) {
+
+  .journey-hero {
+    padding: 30px 0 43px;
+  }
+
+
+  .journey-back {
+    margin-bottom: 24px;
+  }
+
+
+  .journey-hero__layout {
+    grid-template-columns: 1fr;
+
+    gap: 28px;
+  }
+
+
+  .journey-hero h1 {
+    font-size: 2.35rem;
+  }
+
+
+  .journey-hero__description {
+    max-width: none;
+
+    font-size: 0.88rem;
+
+    line-height: 1.68;
+  }
+
+
+  .journey-hero__image {
+    height: 210px;
+
+    border-radius: 13px;
+  }
+
+
+
+  /* ACCIONES */
+
+  .graduate-section {
+    padding: 48px 0 55px;
+  }
+
+
+  .graduate-heading {
+    margin-bottom: 27px;
+
+    text-align: left;
+  }
+
+
+  .graduate-heading__eyebrow {
+    margin-bottom: 6px;
+  }
+
+
+  .graduate-heading h2 {
+    font-size: 1.55rem;
+  }
+
+
+  .graduate-heading > p:last-child {
+    margin: 0;
+  }
+
+
+  .graduate-grid {
+    gap: 12px;
+  }
+
+
+  .graduate-card {
+    padding: 23px 21px;
+  }
+
+
+  .graduate-card__number {
+    margin-bottom: 18px;
+  }
+
+
+
+  /* RECURSOS */
+
+  .graduate-resources {
+    padding: 47px 0 51px;
+  }
+
+
+  .resource-link {
+    padding: 16px 17px;
+  }
+
+
+  .resource-link:hover {
+    padding-left: 17px;
+  }
+
+
+
+  /* DESTACADO */
+
+  .special-graduate {
+    padding: 46px 0;
+  }
+
+
+  .special-graduate__box {
+    padding: 25px 22px;
+
+    gap: 22px;
+  }
+
+
+  .special-graduate h2 {
+    font-size: 1.18rem;
+  }
+
+}
