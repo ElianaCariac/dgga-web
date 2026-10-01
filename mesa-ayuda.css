@@ -1,0 +1,1338 @@
+/* ==========================================
+   MESA DE AYUDA
+========================================== */
+
+
+/* ==========================================
+   NAVEGACIÓN ACTIVA
+========================================== */
+
+.nav__current {
+  color: var(--azul) !important;
+}
+
+.nav__current::after {
+  width: 100% !important;
+}
+
+
+/* ==========================================
+   ENLACE LOGO UNS
+========================================== */
+
+.header__uns-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.header__uns-link img {
+  display: block;
+}
+
+
+/* ==========================================
+   HERO
+========================================== */
+
+.help-hero {
+  position: relative;
+
+  min-height: 280px;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  background-image:
+    url("img/mesa-ayuda.jpg");
+
+  background-position: center center;
+  background-size: cover;
+
+  border-bottom: 1px solid var(--borde);
+}
+
+
+.help-hero__overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(14, 58, 131, 0.90) 0%,
+      rgba(26, 88, 163, 0.82) 35%,
+      rgba(26, 88, 163, 0.48) 65%,
+      rgba(26, 88, 163, 0.16) 100%
+    );
+}
+
+
+.help-hero__content {
+  position: relative;
+
+  z-index: 1;
+}
+
+
+/* ETIQUETA */
+
+.help-hero__eyebrow {
+  margin-bottom: 12px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  color: rgba(255, 255, 255, 0.84);
+
+  font-size: .74rem;
+  font-weight: 700;
+
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+
+.help-hero__eyebrow::before {
+  content: "";
+
+  width: 28px;
+  height: 3px;
+
+  flex-shrink: 0;
+
+  border-radius: 20px;
+
+  background-color: var(--naranja);
+}
+
+
+/* TÍTULO */
+
+.help-hero h1 {
+  max-width: 700px;
+
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(2rem, 4vw, 3.15rem);
+  font-weight: 700;
+
+  line-height: 1.12;
+
+  letter-spacing: -.025em;
+
+  text-shadow:
+    0 2px 14px
+    rgba(9, 39, 78, 0.16);
+}
+
+
+/* ==========================================
+   CONTENIDO
+========================================== */
+
+.help-start {
+  min-height: 500px;
+
+  padding: 58px 0 76px;
+
+  background: #ffffff;
+}
+
+
+.help-start__container {
+  max-width: 980px;
+}
+
+
+.help-step[hidden] {
+  display: none;
+}
+
+
+/* ==========================================
+   INTRODUCCIÓN
+========================================== */
+
+.help-start__intro {
+  max-width: 100%;
+
+  margin: 0 0 30px;
+
+  color: #596673;
+
+  font-size: .96rem;
+
+  line-height: 1.7;
+}
+
+
+/* ==========================================
+   INDICADOR DE PASO
+========================================== */
+
+.help-progress {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 18px;
+}
+
+
+.help-progress__number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 34px;
+  height: 25px;
+
+  padding: 0 8px;
+
+  border-radius: 20px;
+
+  background: #eaf2fb;
+
+  color: #1A58A3;
+
+  font-size: .72rem;
+  font-weight: 700;
+}
+
+
+.help-progress__text {
+  color: #1A58A3;
+
+  font-size: .76rem;
+  font-weight: 600;
+
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+
+/* ==========================================
+   TÍTULOS
+========================================== */
+
+.help-start__heading {
+  max-width: 100%;
+
+  margin-bottom: 34px;
+}
+
+
+.help-start__heading h2 {
+  margin: 0 0 10px;
+
+  color: #26384a;
+
+  font-size: clamp(1.55rem, 3vw, 2rem);
+
+  line-height: 1.25;
+}
+
+
+.help-start__heading p {
+  margin: 0;
+
+  color: #687582;
+
+  font-size: .94rem;
+
+  line-height: 1.65;
+}
+
+
+/* ==========================================
+   CAMBIAR ETAPA + ETAPA ACTUAL
+========================================== */
+
+.help-consultation__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 28px;
+}
+
+
+.help-change-stage {
+  display: inline-flex;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #1A58A3;
+
+  font-family: inherit;
+
+  font-size: .83rem;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+.help-change-stage:hover {
+  text-decoration: underline;
+}
+
+
+.help-change-stage:focus-visible {
+  outline: 3px solid rgba(230, 140, 89, .4);
+
+  outline-offset: 4px;
+}
+
+
+.help-stage-badge {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 7px 13px;
+
+  border: 1px solid #d7e4f1;
+  border-radius: 999px;
+
+  background: #f2f7fc;
+}
+
+
+.help-stage-badge__label {
+  color: #778492;
+
+  font-size: .7rem;
+  font-weight: 600;
+
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+
+.help-selected-stage {
+  margin: 0;
+
+  color: #1A58A3;
+
+  font-size: .78rem;
+  font-weight: 700;
+}
+
+
+/* ==========================================
+   OPCIONES DE ETAPA
+========================================== */
+
+.help-options {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+}
+
+
+.help-option {
+  position: relative;
+
+  min-height: 215px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  padding: 25px 24px 22px;
+
+  border: 1px solid #dfe5eb;
+  border-radius: 13px;
+
+  background: #ffffff;
+
+  color: inherit;
+
+  font-family: inherit;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 16px
+    rgba(30, 52, 75, .06);
+
+  transition:
+    transform .2s ease,
+    border-color .2s ease,
+    box-shadow .2s ease;
+}
+
+
+.help-option:hover {
+  transform: translateY(-3px);
+
+  border-color: #9db9d8;
+
+  box-shadow:
+    0 8px 22px
+    rgba(30, 52, 75, .10);
+}
+
+
+.help-option:focus-visible {
+  outline: 3px solid rgba(230, 140, 89, .45);
+
+  outline-offset: 3px;
+}
+
+
+.help-option__number {
+  margin-bottom: 28px;
+
+  color: #E68C59;
+
+  font-size: .78rem;
+  font-weight: 700;
+}
+
+
+.help-option__content {
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+.help-option__content strong {
+  margin-bottom: 8px;
+
+  color: #1A58A3;
+
+  font-size: 1.03rem;
+  font-weight: 600;
+}
+
+
+.help-option__content > span {
+  color: #687582;
+
+  font-size: .84rem;
+
+  line-height: 1.55;
+}
+
+
+.help-option__arrow {
+  margin-top: auto;
+
+  padding-top: 18px;
+
+  color: #1A58A3;
+
+  font-size: 1.15rem;
+  font-weight: 600;
+
+  transition:
+    transform .2s ease;
+}
+
+
+.help-option:hover .help-option__arrow {
+  transform: translateX(4px);
+}
+
+
+/* ==========================================
+   FORMULARIO
+========================================== */
+
+.help-form {
+  position: relative;
+
+  width: 100%;
+  max-width: none;
+
+  overflow: hidden;
+
+  padding: 38px 38px 32px;
+
+  border: 1px solid #dce4ec;
+  border-radius: 16px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 12px 35px
+    rgba(30, 52, 75, .07);
+}
+
+
+.help-form__accent {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 4px;
+
+  background: #1A58A3;
+}
+
+
+/* ==========================================
+   SECCIONES INTERNAS DEL FORMULARIO
+========================================== */
+
+.help-form__section {
+  padding-bottom: 34px;
+
+  margin-bottom: 34px;
+
+  border-bottom: 1px solid #dfe5eb;
+}
+
+
+.help-form__section:last-of-type {
+  margin-bottom: 28px;
+}
+
+
+.help-form__section-heading {
+  margin-bottom: 27px;
+}
+
+
+.help-form__section-eyebrow {
+  margin: 0 0 5px;
+
+  color: #E68C59;
+
+  font-size: .7rem;
+  font-weight: 700;
+
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+
+.help-form__section-heading h3 {
+  margin: 0 0 7px;
+
+  color: #26384a;
+
+  font-size: 1.2rem;
+  font-weight: 700;
+
+  line-height: 1.35;
+}
+
+
+.help-form__section-heading > p:not(.help-form__section-eyebrow) {
+  max-width: 650px;
+
+  margin: 0;
+
+  color: #687582;
+
+  font-size: .82rem;
+
+  line-height: 1.6;
+}
+
+
+/* ==========================================
+   GRILLA DE DATOS
+========================================== */
+
+.help-form__data-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  column-gap: 24px;
+  row-gap: 22px;
+}
+
+
+/* ==========================================
+   DATOS PERSONALES
+========================================== */
+
+.help-form__field {
+  min-width: 0;
+
+  margin: 0;
+}
+
+
+.help-form__field > label {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #26384a;
+
+  font-size: .86rem;
+  font-weight: 600;
+
+  line-height: 1.5;
+}
+
+
+.help-form__required-mark {
+  color: #c96e3c;
+
+  font-weight: 700;
+}
+
+
+.help-form__optional {
+  display: inline-block;
+
+  margin-left: 7px;
+
+  color: #778492;
+
+  font-size: .7rem;
+  font-weight: 500;
+}
+
+
+.help-form__field input {
+  width: 100%;
+
+  min-height: 50px;
+
+  padding: 0 15px;
+
+  border: 1px solid #cfd9e3;
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  color: #26384a;
+
+  font-family: inherit;
+  font-size: .88rem;
+
+  line-height: 1.5;
+
+  transition:
+    border-color .2s ease,
+    box-shadow .2s ease,
+    background-color .2s ease;
+}
+
+
+.help-form__field input::placeholder {
+  color: #8a96a2;
+}
+
+
+.help-form__field input:hover {
+  border-color: #9db9d8;
+}
+
+
+.help-form__field input:focus {
+  outline: none;
+
+  border-color: #1A58A3;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(26, 88, 163, .11);
+}
+
+
+/* ==========================================
+   TELÉFONO
+========================================== */
+
+.help-form__phone {
+  width: 100%;
+
+  display: flex;
+
+  border: 1px solid #cfd9e3;
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  transition:
+    border-color .2s ease,
+    box-shadow .2s ease;
+}
+
+
+.help-form__phone:hover {
+  border-color: #9db9d8;
+}
+
+
+.help-form__phone:focus-within {
+  border-color: #1A58A3;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(26, 88, 163, .11);
+}
+
+
+.help-form__phone-prefix {
+  flex: 0 0 auto;
+
+  min-width: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 13px;
+
+  border-right: 1px solid #dce4ec;
+
+  background: #f4f7fa;
+
+  color: #26384a;
+
+  font-size: .86rem;
+  font-weight: 600;
+}
+
+
+.help-form__phone input {
+  flex: 1;
+
+  min-width: 0;
+
+  border: 0;
+  border-radius: 0;
+
+  box-shadow: none;
+}
+
+
+.help-form__phone input:hover,
+.help-form__phone input:focus {
+  border: 0;
+
+  box-shadow: none;
+}
+
+
+/* ==========================================
+   GRUPOS DE LA CONSULTA
+========================================== */
+
+.help-form__group {
+  padding-bottom: 0;
+
+  margin-bottom: 20px;
+
+  border-bottom: 0;
+}
+
+
+.help-form__group:last-child {
+  padding-bottom: 0;
+
+  margin-bottom: 0;
+
+  border-bottom: 0;
+}
+
+
+.help-form__label-row {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 11px;
+
+  margin-bottom: 12px;
+}
+
+
+.help-form__number {
+  flex: 0 0 auto;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 28px;
+  height: 22px;
+
+  margin-top: 1px;
+
+  border-radius: 5px;
+
+  background: #fff3eb;
+
+  color: #c96e3c;
+
+  font-size: .68rem;
+  font-weight: 700;
+}
+
+
+.help-form__group label {
+  color: #26384a;
+
+  font-size: .92rem;
+  font-weight: 600;
+
+  line-height: 1.5;
+}
+
+
+/* ==========================================
+   INPUTS DE LA CONSULTA
+========================================== */
+
+.help-form__group input,
+.help-form__group select,
+.help-form__group textarea {
+  width: 100%;
+
+  border: 1px solid #cfd9e3;
+  border-radius: 10px;
+
+  color: #26384a;
+
+  font-family: inherit;
+  font-size: .9rem;
+
+  line-height: 1.5;
+
+  transition:
+    border-color .2s ease,
+    box-shadow .2s ease,
+    background-color .2s ease;
+}
+
+
+.help-form__group input,
+.help-form__group select {
+  min-height: 52px;
+
+  padding: 0 15px;
+
+  background: #ffffff;
+}
+
+
+.help-form__group textarea {
+  min-height: 165px;
+
+  padding: 15px;
+
+  resize: vertical;
+
+  background: #f9fbfd;
+}
+
+
+.help-form__group input::placeholder,
+.help-form__group textarea::placeholder {
+  color: #8a96a2;
+}
+
+
+.help-form__group input:hover,
+.help-form__group select:hover,
+.help-form__group textarea:hover {
+  border-color: #9db9d8;
+}
+
+
+.help-form__group input:focus,
+.help-form__group select:focus,
+.help-form__group textarea:focus {
+  outline: none;
+
+  border-color: #1A58A3;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(26, 88, 163, .11);
+}
+
+
+/* ==========================================
+   SELECT PERSONALIZADO
+========================================== */
+
+.help-form__select-wrap {
+  position: relative;
+}
+
+
+.help-form__select-wrap::after {
+  content: "";
+
+  position: absolute;
+
+  top: 50%;
+  right: 18px;
+
+  width: 8px;
+  height: 8px;
+
+  border-right: 2px solid #1A58A3;
+  border-bottom: 2px solid #1A58A3;
+
+  pointer-events: none;
+
+  transform:
+    translateY(-70%)
+    rotate(45deg);
+}
+
+
+.help-form__select-wrap select {
+  appearance: none;
+  -webkit-appearance: none;
+
+  padding-right: 48px;
+
+  cursor: pointer;
+}
+
+
+/* ==========================================
+   PIE DEL FORMULARIO
+========================================== */
+
+.help-form__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  padding-top: 3px;
+}
+
+
+.help-form__required {
+  max-width: 350px;
+
+  margin: 0;
+
+  color: #7a8793;
+
+  font-size: .76rem;
+
+  line-height: 1.5;
+}
+
+
+.help-form__required > span {
+  color: #c96e3c;
+
+  font-weight: 700;
+}
+
+
+.help-form__submit {
+  flex: 0 0 auto;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  min-height: 48px;
+
+  padding: 0 25px;
+
+  border: 0;
+  border-radius: 9px;
+
+  background: #1A58A3;
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: .88rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 13px
+    rgba(26, 88, 163, .16);
+
+  transition:
+    background-color .2s ease,
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+
+.help-form__submit:hover {
+  transform: translateY(-1px);
+
+  background: #12467f;
+
+  box-shadow:
+    0 7px 17px
+    rgba(26, 88, 163, .22);
+}
+
+
+.help-form__submit:focus-visible {
+  outline: 3px solid rgba(230, 140, 89, .45);
+
+  outline-offset: 3px;
+}
+
+
+.help-form__submit span {
+  font-size: 1rem;
+
+  transition:
+    transform .2s ease;
+}
+
+
+.help-form__submit:hover span {
+  transform: translateX(3px);
+}
+
+
+/* ==========================================
+   ACLARACIÓN PASO 1
+========================================== */
+
+.help-start__note {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 13px;
+
+  max-width: 730px;
+
+  margin-top: 34px;
+
+  padding: 16px 18px;
+
+  border-radius: 9px;
+
+  background: #f5f8fb;
+}
+
+
+.help-start__note-icon {
+  flex: 0 0 auto;
+
+  width: 23px;
+  height: 23px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #9db9d8;
+  border-radius: 50%;
+
+  color: #1A58A3;
+
+  font-size: .75rem;
+  font-weight: 700;
+}
+
+
+.help-start__note p {
+  margin: 0;
+
+  color: #596673;
+
+  font-size: .82rem;
+
+  line-height: 1.6;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 850px) {
+
+  .help-options {
+    grid-template-columns: 1fr;
+  }
+
+
+  .help-option {
+    min-height: auto;
+
+    display: grid;
+
+    grid-template-columns:
+      auto 1fr auto;
+
+    grid-template-rows: auto;
+
+    align-items: center;
+
+    gap: 18px;
+  }
+
+
+  .help-option__number {
+    margin: 0;
+  }
+
+
+  .help-option__arrow {
+    margin: 0;
+
+    padding: 0;
+  }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 640px) {
+
+  .help-hero {
+    min-height: 220px;
+
+    background-position: center center;
+  }
+
+
+  .help-hero__overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(14, 58, 131, 0.92) 0%,
+        rgba(26, 88, 163, 0.80) 65%,
+        rgba(26, 88, 163, 0.58) 100%
+      );
+  }
+
+
+  .help-hero__eyebrow {
+    color: rgba(255, 255, 255, 0.84);
+  }
+
+
+  .help-hero h1 {
+    max-width: 500px;
+
+    color: #ffffff;
+
+    font-size: 2rem;
+  }
+
+
+  .help-start {
+    min-height: 420px;
+
+    padding: 42px 0 55px;
+  }
+
+
+  .help-start__intro {
+    margin-bottom: 25px;
+
+    font-size: .9rem;
+
+    line-height: 1.65;
+  }
+
+
+  .help-start__heading {
+    margin-bottom: 27px;
+  }
+
+
+  .help-start__heading h2 {
+    font-size: 1.45rem;
+  }
+
+
+  .help-option {
+    grid-template-columns:
+      1fr auto;
+
+    gap: 8px 15px;
+
+    padding: 20px;
+  }
+
+
+  .help-option__number {
+    grid-column: 1 / 2;
+
+    margin-bottom: 5px;
+  }
+
+
+  .help-option__content {
+    grid-column: 1 / 2;
+  }
+
+
+  .help-option__arrow {
+    grid-column: 2;
+    grid-row: 1 / 3;
+
+    align-self: center;
+  }
+
+
+  .help-consultation__top {
+    align-items: flex-start;
+
+    flex-direction: column-reverse;
+
+    gap: 13px;
+
+    margin-bottom: 25px;
+  }
+
+
+  .help-stage-badge {
+    padding: 6px 11px;
+  }
+
+
+  .help-form {
+    padding: 30px 20px 23px;
+
+    border-radius: 13px;
+  }
+
+
+  .help-form__section {
+    padding-bottom: 27px;
+
+    margin-bottom: 27px;
+  }
+
+
+  .help-form__section:last-of-type {
+    margin-bottom: 23px;
+  }
+
+
+  .help-form__section-heading {
+    margin-bottom: 23px;
+  }
+
+
+  .help-form__section-heading h3 {
+    font-size: 1.1rem;
+  }
+
+
+  .help-form__data-grid {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+
+  .help-form__field {
+    margin: 0;
+  }
+
+
+  .help-form__field input {
+    min-height: 50px;
+  }
+
+
+  .help-form__phone-prefix {
+    min-width: 58px;
+
+    padding: 0 11px;
+  }
+
+
+  .help-form__group {
+    padding-bottom: 0;
+
+    margin-bottom: 18px;
+  }
+
+
+  .help-form__group:last-child {
+    margin-bottom: 0;
+  }
+
+
+  .help-form__label-row {
+    gap: 9px;
+  }
+
+
+  .help-form__group input,
+  .help-form__group select {
+    min-height: 50px;
+  }
+
+
+  .help-form__group textarea {
+    min-height: 150px;
+  }
+
+
+  .help-form__footer {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 17px;
+  }
+
+
+  .help-form__required {
+    max-width: none;
+  }
+
+
+  .help-form__submit {
+    width: 100%;
+  }
+
+
+  .help-start__note {
+    margin-top: 27px;
+  }
+
+}

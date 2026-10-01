@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mesa de Ayuda | Dirección General de Gestión Académica</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="mesa-ayuda.css">
+  <link rel="stylesheet" href="accessibility.css">
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header class="header">
+    <div class="container header__inner">
+
+      <a href="index.html" class="brand">
+        <img src="img/logo-dgga.png" alt="Dirección General de Gestión Académica" class="logo logo--dgga">
+      </a>
+
+      <nav class="nav" id="main-nav" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="dgga.html">DGGA</a>
+        <a href="mesa-ayuda.html" class="nav__current" aria-current="page">Mesa de Ayuda</a>
+      </nav>
+
+      <div class="header__right">
+
+        <a href="https://www.uns.edu.ar/" class="header__uns-link" aria-label="Ir al sitio web de la Universidad Nacional del Sur">
+          <img src="img/logo-uns.png" alt="Universidad Nacional del Sur" class="logo logo--uns">
+        </a>
+
+        <button class="menu-button" type="button" aria-label="Abrir menú" aria-controls="main-nav" aria-expanded="false">
+          ☰
+        </button>
+
+      </div>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="help-hero">
+
+      <div class="help-hero__overlay"></div>
+
+      <div class="container help-hero__content">
+        <p class="help-hero__eyebrow">Orientación y consultas</p>
+        <h1>Mesa de Ayuda</h1>
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         MESA DE AYUDA
+    ========================== -->
+
+    <section class="help-start">
+
+      <div class="container help-start__container">
+
+        <!-- =====================
+             PASO 1 · ETAPA
+        ====================== -->
+
+        <div class="help-step" id="step-stage">
+
+          <p class="help-start__intro">Te ayudamos a encontrar la información o el canal adecuado para resolver tu consulta.</p>
+
+          <div class="help-progress">
+            <span class="help-progress__number">01</span>
+            <span class="help-progress__text">Tu recorrido</span>
+          </div>
+
+          <div class="help-start__heading">
+
+            <h2>Para empezar, contanos en qué etapa estás</h2>
+
+            <p>Elegí la opción que mejor represente tu situación para que podamos orientarte.</p>
+
+          </div>
+
+
+          <div class="help-options">
+
+            <!-- INGRESO -->
+
+            <button class="help-option" type="button" data-stage="ingreso">
+
+              <span class="help-option__number">01</span>
+
+              <span class="help-option__content">
+                <strong>Quiero ingresar</strong>
+                <span>Estoy pensando en comenzar una carrera o realizando el proceso de ingreso.</span>
+              </span>
+
+              <span class="help-option__arrow" aria-hidden="true">→</span>
+
+            </button>
+
+
+            <!-- CURSANDO -->
+
+            <button class="help-option" type="button" data-stage="cursando">
+
+              <span class="help-option__number">02</span>
+
+              <span class="help-option__content">
+                <strong>Estoy cursando</strong>
+                <span>Ya soy estudiante y necesito orientación sobre una gestión académica.</span>
+              </span>
+
+              <span class="help-option__arrow" aria-hidden="true">→</span>
+
+            </button>
+
+
+            <!-- EGRESO -->
+
+            <button class="help-option" type="button" data-stage="egreso">
+
+              <span class="help-option__number">03</span>
+
+              <span class="help-option__content">
+                <strong>Ya finalicé</strong>
+                <span>Finalicé mi carrera y necesito información sobre títulos, certificaciones o egreso.</span>
+              </span>
+
+              <span class="help-option__arrow" aria-hidden="true">→</span>
+
+            </button>
+
+          </div>
+
+
+          <div class="help-start__note">
+
+            <div class="help-start__note-icon" aria-hidden="true">i</div>
+
+            <p>Elegir tu etapa nos permite orientar mejor tu consulta.</p>
+
+          </div>
+
+        </div>
+
+
+        <!-- =====================
+             PASO 2 · CONSULTA
+        ====================== -->
+
+        <div class="help-step" id="step-consultation" hidden>
+
+          <div class="help-consultation__top">
+
+            <button class="help-change-stage" id="change-stage" type="button">
+              ← Cambiar etapa
+            </button>
+
+            <div class="help-stage-badge">
+              <span class="help-stage-badge__label">Etapa</span>
+              <strong class="help-selected-stage" id="selected-stage"></strong>
+            </div>
+
+          </div>
+
+
+          <div class="help-progress">
+            <span class="help-progress__number">02</span>
+            <span class="help-progress__text">Tu consulta</span>
+          </div>
+
+
+          <div class="help-start__heading">
+
+            <h2>Contanos qué necesitás</h2>
+
+            <p>Completá tus datos y contanos qué dificultad estás teniendo para que podamos orientar tu consulta.</p>
+
+          </div>
+
+
+          <!-- FORMULARIO -->
+
+          <form id="help-form" class="help-form">
+
+            <div class="help-form__accent" aria-hidden="true"></div>
+
+
+            <!-- =========================
+                 TUS DATOS
+            ========================== -->
+
+            <div class="help-form__section">
+
+              <div class="help-form__section-heading">
+                <p class="help-form__section-eyebrow">Tus datos</p>
+                <h3>Datos de contacto</h3>
+                <p>Los vamos a utilizar para identificar tu consulta y poder contactarte.</p>
+              </div>
+
+
+              <div class="help-form__data-grid">
+
+                <!-- NOMBRE Y APELLIDO -->
+
+                <div class="help-form__field">
+
+                  <label for="full-name">
+                    Nombre y apellido <span class="help-form__required-mark" aria-hidden="true">*</span>
+                  </label>
+
+                  <input
+                    type="text"
+                    id="full-name"
+                    name="full-name"
+                    autocomplete="name"
+                    placeholder="Ingresá tu nombre y apellido"
+                    required
+                  >
+
+                </div>
+
+
+                <!-- CORREO ELECTRÓNICO -->
+
+                <div class="help-form__field">
+
+                  <label for="email">
+                    Correo electrónico <span class="help-form__required-mark" aria-hidden="true">*</span>
+                  </label>
+
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    autocomplete="email"
+                    placeholder="ejemplo@correo.com"
+                    required
+                  >
+
+                </div>
+
+
+                <!-- LEGAJO -->
+
+                <div class="help-form__field">
+
+                  <label for="student-id">
+                    Legajo / Libreta Universitaria UNS
+                    <span class="help-form__optional">Opcional</span>
+                  </label>
+
+                  <input
+                    type="text"
+                    id="student-id"
+                    name="student-id"
+                    autocomplete="off"
+                    inputmode="numeric"
+                    placeholder="Ingresá tu número de legajo"
+                  >
+
+                </div>
+
+
+                <!-- TELÉFONO -->
+
+                <div class="help-form__field">
+
+                  <label for="phone">
+                    Número de teléfono <span class="help-form__required-mark" aria-hidden="true">*</span>
+                  </label>
+
+                  <div class="help-form__phone">
+
+                    <span class="help-form__phone-prefix" aria-hidden="true">+54</span>
+
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      autocomplete="tel-national"
+                      inputmode="tel"
+                      placeholder="291 1234567"
+                      aria-label="Número de teléfono sin código de país"
+                      required
+                    >
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <!-- =========================
+                 TU CONSULTA
+            ========================== -->
+
+            <div class="help-form__section">
+
+              <div class="help-form__section-heading">
+                <p class="help-form__section-eyebrow">Tu consulta</p>
+                <h3>¿Qué necesitás resolver?</h3>
+                <p>Contanos el motivo de tu consulta y brindanos la información necesaria para poder orientarte.</p>
+              </div>
+
+
+              <!-- CAMPO 01 -->
+
+              <div class="help-form__group">
+
+                <div class="help-form__label-row">
+
+                  <span class="help-form__number" aria-hidden="true">01</span>
+
+                  <label for="reason">
+                    ¿Con qué necesitás ayuda? <span class="help-form__required-mark" aria-hidden="true">*</span>
+                  </label>
+
+                </div>
+
+                <div class="help-form__select-wrap">
+
+                  <select id="reason" name="reason" required>
+                    <option value="" selected disabled>Seleccioná una opción</option>
+                  </select>
+
+                </div>
+
+              </div>
+
+
+              <!-- CAMPO 02 -->
+
+              <div class="help-form__group">
+
+                <div class="help-form__label-row">
+
+                  <span class="help-form__number" aria-hidden="true">02</span>
+
+                  <label for="consultation">
+                    Contanos un poco más <span class="help-form__required-mark" aria-hidden="true">*</span>
+                  </label>
+
+                </div>
+
+                <textarea
+                  id="consultation"
+                  name="consultation"
+                  rows="6"
+                  placeholder="Describí tu consulta con el detalle que consideres necesario..."
+                  required
+                ></textarea>
+
+              </div>
+
+            </div>
+
+
+            <div class="help-form__footer">
+
+              <p class="help-form__required"><span aria-hidden="true">*</span> Los campos indicados son obligatorios.</p>
+
+<button class="help-form__submit" type="submit">
+  Enviar consulta
+  <span aria-hidden="true">→</span>
+</button>
+
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer class="footer">
+
+    <div class="container footer__inner">
+
+      <div class="footer__info">
+
+        <h2>Dirección General de Gestión Académica (DGGA)</h2>
+
+        <p class="footer__university">Universidad Nacional del Sur</p>
+
+        <p class="footer__data">
+
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 10.2A3.2 3.2 0 1 1 12 5.8a3.2 3.2 0 0 1 0 6.4Z"/>
+          </svg>
+
+          <span>Av. Alem 1015 · (B8000COL)</span>
+
+        </p>
+
+        <p class="footer__data">
+
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6.6 10.8a15.3 15.3 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.3 1.1.4 2.2.6 3.4.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.5 21 3 13.5 3 4.2c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.3.6 3.4.1.4 0 .8-.3 1l-2.2 2.2Z"/>
+          </svg>
+
+          <span>+54 291 4595118</span>
+
+        </p>
+
+      </div>
+
+
+      <div class="footer__contact">
+
+        <p class="footer__title">Contacto y redes</p>
+
+        <div class="footer__socials">
+
+          <!-- WHATSAPP -->
+
+          <a
+            href="https://api.whatsapp.com/send?phone=542915063774"
+            class="social-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp Soy Alumno UNS"
+            title="WhatsApp"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.966-.94 1.164-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.009-.371-.011-.57-.011-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479s1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.693.625.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.004 21.785h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.981.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.002-5.45 4.438-9.887 9.892-9.887 2.641.001 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 7.001c-.003 5.45-4.439 9.881-9.889 9.881"/>
+            </svg>
+          </a>
+
+
+          <!-- INSTAGRAM -->
+
+          <a
+            href="https://www.instagram.com/soyalumnouns"
+            class="social-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram Soy Alumno UNS"
+            title="Instagram"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm10.5 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/>
+            </svg>
+          </a>
+
+
+          <!-- FACEBOOK -->
+
+          <a
+            href="https://www.facebook.com/soyalumno.UNS/"
+            class="social-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook Soy Alumno UNS"
+            title="Facebook"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M13.5 22v-9h3l.5-3h-3.5V8.1c0-.9.3-1.6 1.7-1.6H17V3.8c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.5V10H7v3h3v9h3.5Z"/>
+            </svg>
+          </a>
+
+
+          <!-- LINKTREE -->
+
+          <a
+            href="https://linktr.ee/gestionacademica"
+            class="social-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Linktree Gestión Académica"
+            title="Linktree"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M11 21v-7.2L8.5 16.3 7 14.8l4-4V8.3L7.5 11.8 6 10.3 10.3 6H7.8V4h3.2V1h2v3h3.2v2h-2.5l4.3 4.3-1.5 1.5L13 8.3v2.5l4 4-1.5 1.5-2.5-2.5V21Z"/>
+            </svg>
+          </a>
+
+
+          <!-- YOUTUBE -->
+
+          <a
+            href="https://www.youtube.com/@soyalumnoUNS"
+            class="social-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube Soy Alumno UNS"
+            title="YouTube"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/>
+            </svg>
+          </a>
+
+
+          <!-- EMAIL -->
+
+          <a
+            href="mailto:dgga@uns.edu.ar"
+            class="social-link"
+            aria-label="Enviar correo electrónico a la DGGA"
+            title="Correo electrónico"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/>
+            </svg>
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       MENÚ RESPONSIVE
+  ========================== -->
+
+  <script>
+
+    const menuButton = document.querySelector(".menu-button");
+    const navigation = document.querySelector(".nav");
+    const navigationLinks = document.querySelectorAll(".nav a");
+
+    function closeMenu() {
+      navigation.classList.remove("nav--open");
+      menuButton.setAttribute("aria-expanded", "false");
+      menuButton.setAttribute("aria-label", "Abrir menú");
+      menuButton.textContent = "☰";
+    }
+
+    menuButton.addEventListener("click", function () {
+
+      const isOpen = navigation.classList.toggle("nav--open");
+
+      menuButton.setAttribute("aria-expanded", isOpen);
+      menuButton.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
+      menuButton.textContent = isOpen ? "×" : "☰";
+
+    });
+
+    navigationLinks.forEach(function (link) {
+      link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        closeMenu();
+      }
+    });
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 640) {
+        closeMenu();
+      }
+    });
+
+  </script>
+
+
+  <!-- =========================
+       LÓGICA MESA DE AYUDA
+  ========================== -->
+
+  <script>
+
+    const stageStep = document.getElementById("step-stage");
+    const consultationStep = document.getElementById("step-consultation");
+    const stageButtons = document.querySelectorAll("[data-stage]");
+    const changeStageButton = document.getElementById("change-stage");
+    const selectedStageText = document.getElementById("selected-stage");
+    const reasonSelect = document.getElementById("reason");
+    const helpForm = document.getElementById("help-form");
+
+
+    /* =========================
+       OPCIONES SEGÚN ETAPA
+    ========================== */
+
+    const stages = {
+
+      ingreso: {
+
+        label: "Quiero ingresar",
+
+        reasons: [
+
+          {
+            value: "problema-inscripcion",
+            text: "Tengo un problema con la inscripción o preinscripción"
+          },
+
+          {
+            value: "requisitos-documentacion",
+            text: "Tengo dudas sobre requisitos o documentación"
+          },
+
+          {
+            value: "mayores-25",
+            text: "Tengo una consulta sobre el ingreso para mayores de 25"
+          },
+
+          {
+            value: "otra-universidad",
+            text: "Vengo de otra universidad y necesito orientación"
+          },
+
+          {
+            value: "acompanamiento-ingreso",
+            text: "Tengo una consulta sobre ATI o actividades de ingreso"
+          },
+
+          {
+            value: "otro-problema-ingreso",
+            text: "Tengo otro problema durante el proceso de ingreso"
+          },
+
+          {
+            value: "informacion",
+            text: "No encontré la información que necesito"
+          },
+
+          {
+            value: "orientacion",
+            text: "No sé dónde hacer mi consulta"
+          }
+
+        ]
+
+      },
+
+
+      cursando: {
+
+        label: "Estoy cursando",
+
+        reasons: [
+
+          {
+            value: "inscripcion-materias-examenes",
+            text: "Tengo un problema con la inscripción a materias o exámenes"
+          },
+
+          {
+            value: "reinscripcion",
+            text: "Tengo una consulta sobre la reinscripción anual"
+          },
+
+          {
+            value: "tramite-academico",
+            text: "Necesito ayuda con un trámite académico durante la carrera"
+          },
+
+          {
+            value: "certificaciones",
+            text: "Tengo una consulta sobre certificaciones o constancias"
+          },
+
+          {
+            value: "guarani",
+            text: "Tengo un problema con Guaraní3W"
+          },
+
+          {
+            value: "otro-problema-carrera",
+            text: "Tengo otro problema durante mi carrera"
+          },
+
+          {
+            value: "informacion",
+            text: "No encontré la información que necesito"
+          },
+
+          {
+            value: "orientacion",
+            text: "No sé dónde hacer mi consulta"
+          }
+
+        ]
+
+      },
+
+
+      egreso: {
+
+        label: "Ya finalicé",
+
+        reasons: [
+
+          {
+            value: "solicitud-titulo",
+            text: "Necesito orientación para iniciar o gestionar mi título"
+          },
+
+          {
+            value: "seguimiento-titulo",
+            text: "Ya solicité mi título y necesito consultar su estado"
+          },
+
+          {
+            value: "certificacion-egreso",
+            text: "Necesito una certificación o documentación de egreso"
+          },
+
+          {
+            value: "colacion",
+            text: "Tengo una consulta sobre colaciones"
+          },
+
+          {
+            value: "otra-gestion-egreso",
+            text: "Necesito realizar otra gestión vinculada con mi egreso"
+          },
+
+          {
+            value: "problema-gestion",
+            text: "Tengo un problema al realizar una gestión de egreso"
+          },
+
+          {
+            value: "informacion",
+            text: "No encontré la información que necesito"
+          },
+
+          {
+            value: "orientacion",
+            text: "No sé dónde hacer mi consulta"
+          }
+
+        ]
+
+      }
+
+    };
+
+
+    let currentStage = null;
+
+
+    /* =========================
+       ACTUALIZAR URL
+    ========================== */
+
+    function updateUrl(stage = null) {
+
+      const url = stage
+        ? `${window.location.pathname}?etapa=${encodeURIComponent(stage)}`
+        : window.location.pathname;
+
+      window.history.replaceState({}, "", url);
+
+    }
+
+
+    /* =========================
+       SCROLL
+    ========================== */
+
+    function scrollToStep(step) {
+
+      step.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+
+    }
+
+
+    /* =========================
+       CARGAR MOTIVOS
+    ========================== */
+
+    function loadReasons(stage) {
+
+      const stageData = stages[stage];
+
+      reasonSelect.innerHTML = "";
+
+      const defaultOption = document.createElement("option");
+
+      defaultOption.value = "";
+      defaultOption.textContent = "Seleccioná una opción";
+      defaultOption.disabled = true;
+      defaultOption.selected = true;
+
+      reasonSelect.appendChild(defaultOption);
+
+
+      stageData.reasons.forEach(function (reason) {
+
+        const option = document.createElement("option");
+
+        option.value = reason.value;
+        option.textContent = reason.text;
+
+        reasonSelect.appendChild(option);
+
+      });
+
+    }
+
+
+    /* =========================
+       MOSTRAR CONSULTA
+    ========================== */
+
+    function showConsultation(stage) {
+
+      if (!stages[stage]) {
+        return;
+      }
+
+      currentStage = stage;
+
+      helpForm.reset();
+      loadReasons(stage);
+
+      selectedStageText.textContent = stages[stage].label;
+
+      stageStep.hidden = true;
+      consultationStep.hidden = false;
+
+      updateUrl(stage);
+
+      scrollToStep(consultationStep);
+
+    }
+
+
+    /* =========================
+       VOLVER A ELEGIR ETAPA
+    ========================== */
+
+    function showStageSelection() {
+
+      currentStage = null;
+
+      helpForm.reset();
+
+      consultationStep.hidden = true;
+      stageStep.hidden = false;
+
+      updateUrl();
+
+      scrollToStep(stageStep);
+
+    }
+
+
+    /* =========================
+       EVENTOS DE ETAPA
+    ========================== */
+
+    stageButtons.forEach(function (button) {
+
+      button.addEventListener("click", function () {
+        showConsultation(button.dataset.stage);
+      });
+
+    });
+
+
+    /* =========================
+       CAMBIAR ETAPA
+    ========================== */
+
+    changeStageButton.addEventListener("click", showStageSelection);
+
+
+    /* =========================
+       ENVÍO
+    ========================== */
+
+    helpForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+    });
+
+
+    /* =========================
+       LEER ETAPA DESDE URL
+    ========================== */
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const stageFromUrl = urlParams.get("etapa");
+
+
+    if (stages[stageFromUrl]) {
+      showConsultation(stageFromUrl);
+    }
+
+  </script>
+
+
+  <!-- MÓDULO DE ACCESIBILIDAD -->
+
+  <script src="accessibility.js"></script>
+
+</body>
+
+</html>
