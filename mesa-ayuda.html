@@ -203,6 +203,12 @@
 
             <div class="help-form__accent" aria-hidden="true"></div>
 
+            <!-- DATOS INTERNOS PARA EL ENVÍO -->
+
+            <input type="hidden" id="form-stage" name="Etapa">
+            <input type="hidden" name="_subject" value="Nueva consulta - Mesa de Ayuda DGGA">
+            <input type="hidden" name="_template" value="table">
+
 
             <!-- =========================
                  TUS DATOS
@@ -230,7 +236,7 @@
                   <input
                     type="text"
                     id="full-name"
-                    name="full-name"
+                    name="Nombre y apellido"
                     autocomplete="name"
                     placeholder="Ingresá tu nombre y apellido"
                     required
@@ -250,7 +256,7 @@
                   <input
                     type="email"
                     id="email"
-                    name="email"
+                    name="Correo electrónico"
                     autocomplete="email"
                     placeholder="ejemplo@correo.com"
                     required
@@ -271,7 +277,7 @@
                   <input
                     type="text"
                     id="student-id"
-                    name="student-id"
+                    name="Legajo / Libreta Universitaria"
                     autocomplete="off"
                     inputmode="numeric"
                     placeholder="Ingresá tu número de legajo"
@@ -295,7 +301,7 @@
                     <input
                       type="tel"
                       id="phone"
-                      name="phone"
+                      name="Teléfono"
                       autocomplete="tel-national"
                       inputmode="tel"
                       placeholder="291 1234567"
@@ -341,7 +347,7 @@
 
                 <div class="help-form__select-wrap">
 
-                  <select id="reason" name="reason" required>
+                  <select id="reason" name="Motivo de la consulta" required>
                     <option value="" selected disabled>Seleccioná una opción</option>
                   </select>
 
@@ -366,7 +372,7 @@
 
                 <textarea
                   id="consultation"
-                  name="consultation"
+                  name="Consulta"
                   rows="6"
                   placeholder="Describí tu consulta con el detalle que consideres necesario..."
                   required
@@ -379,12 +385,12 @@
 
             <div class="help-form__footer">
 
-              <p class="help-form__required"><span aria-hidden="true">*</span> Los campos indicados son obligatorios.</p>
+              <p class="help-form__required" id="form-status" aria-live="polite"><span aria-hidden="true">*</span> Los campos indicados son obligatorios.</p>
 
-<button class="help-form__submit" type="submit">
-  Enviar consulta
-  <span aria-hidden="true">→</span>
-</button>
+              <button class="help-form__submit" id="submit-button" type="submit">
+                Enviar consulta
+                <span aria-hidden="true">→</span>
+              </button>
 
             </div>
 
@@ -603,6 +609,9 @@
     const selectedStageText = document.getElementById("selected-stage");
     const reasonSelect = document.getElementById("reason");
     const helpForm = document.getElementById("help-form");
+    const formStage = document.getElementById("form-stage");
+    const formStatus = document.getElementById("form-status");
+    const submitButton = document.getElementById("submit-button");
 
 
     /* =========================
@@ -618,42 +627,42 @@
         reasons: [
 
           {
-            value: "problema-inscripcion",
+            value: "Tengo un problema con la inscripción o preinscripción",
             text: "Tengo un problema con la inscripción o preinscripción"
           },
 
           {
-            value: "requisitos-documentacion",
+            value: "Tengo dudas sobre requisitos o documentación",
             text: "Tengo dudas sobre requisitos o documentación"
           },
 
           {
-            value: "mayores-25",
+            value: "Tengo una consulta sobre el ingreso para mayores de 25",
             text: "Tengo una consulta sobre el ingreso para mayores de 25"
           },
 
           {
-            value: "otra-universidad",
+            value: "Vengo de otra universidad y necesito orientación",
             text: "Vengo de otra universidad y necesito orientación"
           },
 
           {
-            value: "acompanamiento-ingreso",
+            value: "Tengo una consulta sobre ATI o actividades de ingreso",
             text: "Tengo una consulta sobre ATI o actividades de ingreso"
           },
 
           {
-            value: "otro-problema-ingreso",
+            value: "Tengo otro problema durante el proceso de ingreso",
             text: "Tengo otro problema durante el proceso de ingreso"
           },
 
           {
-            value: "informacion",
+            value: "No encontré la información que necesito",
             text: "No encontré la información que necesito"
           },
 
           {
-            value: "orientacion",
+            value: "No sé dónde hacer mi consulta",
             text: "No sé dónde hacer mi consulta"
           }
 
@@ -669,42 +678,42 @@
         reasons: [
 
           {
-            value: "inscripcion-materias-examenes",
+            value: "Tengo un problema con la inscripción a materias o exámenes",
             text: "Tengo un problema con la inscripción a materias o exámenes"
           },
 
           {
-            value: "reinscripcion",
+            value: "Tengo una consulta sobre la reinscripción anual",
             text: "Tengo una consulta sobre la reinscripción anual"
           },
 
           {
-            value: "tramite-academico",
+            value: "Necesito ayuda con un trámite académico durante la carrera",
             text: "Necesito ayuda con un trámite académico durante la carrera"
           },
 
           {
-            value: "certificaciones",
+            value: "Tengo una consulta sobre certificaciones o constancias",
             text: "Tengo una consulta sobre certificaciones o constancias"
           },
 
           {
-            value: "guarani",
+            value: "Tengo un problema con Guaraní3W",
             text: "Tengo un problema con Guaraní3W"
           },
 
           {
-            value: "otro-problema-carrera",
+            value: "Tengo otro problema durante mi carrera",
             text: "Tengo otro problema durante mi carrera"
           },
 
           {
-            value: "informacion",
+            value: "No encontré la información que necesito",
             text: "No encontré la información que necesito"
           },
 
           {
-            value: "orientacion",
+            value: "No sé dónde hacer mi consulta",
             text: "No sé dónde hacer mi consulta"
           }
 
@@ -720,42 +729,42 @@
         reasons: [
 
           {
-            value: "solicitud-titulo",
+            value: "Necesito orientación para iniciar o gestionar mi título",
             text: "Necesito orientación para iniciar o gestionar mi título"
           },
 
           {
-            value: "seguimiento-titulo",
+            value: "Ya solicité mi título y necesito consultar su estado",
             text: "Ya solicité mi título y necesito consultar su estado"
           },
 
           {
-            value: "certificacion-egreso",
+            value: "Necesito una certificación o documentación de egreso",
             text: "Necesito una certificación o documentación de egreso"
           },
 
           {
-            value: "colacion",
+            value: "Tengo una consulta sobre colaciones",
             text: "Tengo una consulta sobre colaciones"
           },
 
           {
-            value: "otra-gestion-egreso",
+            value: "Necesito realizar otra gestión vinculada con mi egreso",
             text: "Necesito realizar otra gestión vinculada con mi egreso"
           },
 
           {
-            value: "problema-gestion",
+            value: "Tengo un problema al realizar una gestión de egreso",
             text: "Tengo un problema al realizar una gestión de egreso"
           },
 
           {
-            value: "informacion",
+            value: "No encontré la información que necesito",
             text: "No encontré la información que necesito"
           },
 
           {
-            value: "orientacion",
+            value: "No sé dónde hacer mi consulta",
             text: "No sé dónde hacer mi consulta"
           }
 
@@ -848,6 +857,9 @@
       loadReasons(stage);
 
       selectedStageText.textContent = stages[stage].label;
+      formStage.value = stages[stage].label;
+
+      formStatus.innerHTML = '<span aria-hidden="true">*</span> Los campos indicados son obligatorios.';
 
       stageStep.hidden = true;
       consultationStep.hidden = false;
@@ -868,6 +880,9 @@
       currentStage = null;
 
       helpForm.reset();
+      formStage.value = "";
+
+      formStatus.innerHTML = '<span aria-hidden="true">*</span> Los campos indicados son obligatorios.';
 
       consultationStep.hidden = true;
       stageStep.hidden = false;
@@ -900,11 +915,66 @@
 
 
     /* =========================
-       ENVÍO
+       ENVÍO A FORMSUBMIT
     ========================== */
 
-    helpForm.addEventListener("submit", function (event) {
+    helpForm.addEventListener("submit", async function (event) {
+
       event.preventDefault();
+
+      if (!currentStage) {
+        return;
+      }
+
+      const originalButtonContent = submitButton.innerHTML;
+
+      submitButton.disabled = true;
+      submitButton.innerHTML = 'Enviando...';
+      formStatus.textContent = "Estamos enviando tu consulta...";
+
+      try {
+
+        const formData = new FormData(helpForm);
+
+        const response = await fetch(
+          "https://formsubmit.co/ajax/comunicacion.dgga@uns.edu.ar",
+          {
+            method: "POST",
+            body: formData,
+            headers: {
+              "Accept": "application/json"
+            }
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error("No se pudo enviar la consulta.");
+        }
+
+        const result = await response.json();
+
+        if (result.success === false) {
+          throw new Error("No se pudo enviar la consulta.");
+        }
+
+        helpForm.reset();
+
+        formStage.value = stages[currentStage].label;
+        loadReasons(currentStage);
+
+        formStatus.textContent = "Tu consulta fue enviada correctamente.";
+
+      } catch (error) {
+
+        formStatus.textContent = "No pudimos enviar tu consulta. Por favor, intentá nuevamente.";
+
+      } finally {
+
+        submitButton.disabled = false;
+        submitButton.innerHTML = originalButtonContent;
+
+      }
+
     });
 
 
