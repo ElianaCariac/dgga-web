@@ -4,11 +4,11 @@
 
 
 /* ==================================================
-   HERO
+   ENCABEZADO INTERNO
 ================================================== */
 
 .plans-hero {
-  padding: 38px 0 54px;
+  padding: 34px 0 42px;
 
   background:
     linear-gradient(
@@ -49,26 +49,13 @@
 }
 
 
-.plans-hero__layout {
-  display: grid;
-
-  grid-template-columns:
-    minmax(0, 1.15fr)
-    minmax(320px, 0.85fr);
-
-  gap: 65px;
-
-  align-items: center;
-}
-
-
 .plans-hero__content {
-  min-width: 0;
+  max-width: 720px;
 }
 
 
 .plans-hero__label {
-  margin-bottom: 11px;
+  margin-bottom: 10px;
 
   display: flex;
   align-items: center;
@@ -100,54 +87,29 @@
 
 
 .plans-hero h1 {
-  margin-bottom: 17px;
+  margin: 0 0 13px;
 
   color: var(--azul-oscuro);
 
-  font-size: clamp(2.5rem, 4.5vw, 3.65rem);
+  font-size: clamp(2.15rem, 4vw, 3rem);
   font-weight: 700;
 
-  line-height: 1.06;
+  line-height: 1.08;
 
   letter-spacing: -0.035em;
 }
 
 
 .plans-hero__description {
-  max-width: 570px;
+  max-width: 650px;
+
+  margin: 0;
 
   color: var(--gris-texto);
 
-  font-size: 0.95rem;
+  font-size: 0.92rem;
 
-  line-height: 1.75;
-}
-
-
-/* FOTO */
-
-.plans-hero__image {
-  width: 100%;
-  height: 285px;
-
-  overflow: hidden;
-
-  border-radius: 17px;
-
-  box-shadow:
-    0 12px 32px
-    rgba(27, 56, 89, 0.11);
-}
-
-
-.plans-hero__image img {
-  width: 100%;
-  height: 100%;
-
-  display: block;
-
-  object-fit: cover;
-  object-position: center;
+  line-height: 1.7;
 }
 
 
@@ -156,7 +118,7 @@
 ================================================== */
 
 .plans-section {
-  padding: 68px 0 78px;
+  padding: 58px 0 78px;
 
   background-color: #ffffff;
 }
@@ -165,7 +127,7 @@
 .plans-heading {
   max-width: 720px;
 
-  margin: 0 auto 48px;
+  margin: 0 auto 42px;
 
   text-align: center;
 }
@@ -417,10 +379,6 @@
 
   gap: 18px;
 
-  /*
-    Las dos tarjetas de una misma fila toman
-    automáticamente la altura de la más alta.
-  */
   align-items: stretch;
 }
 
@@ -534,9 +492,21 @@
 ================================================== */
 
 .career-info {
-  padding: 18px 0;
+  padding: 15px 0;
 
   border-bottom: 1px solid #e7ebef;
+}
+
+
+/*
+  IMPORTANTE:
+  El último elemento de cada categoría no agrega
+  aire extra. Así la distancia hasta cada línea
+  divisoria queda siempre igual.
+*/
+
+.career-info > :last-child {
+  margin-bottom: 0;
 }
 
 
@@ -578,6 +548,98 @@
 
 
 /* ==================================================
+   NÚMEROS DE DOCUMENTOS
+================================================== */
+
+.document-numbers {
+  margin-top: 10px;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 7px;
+}
+
+
+.document-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 30px;
+
+  padding: 5px 10px;
+
+  border: 1px solid #d5e1ed;
+  border-radius: 7px;
+
+  background-color: #f5f8fb;
+
+  color: var(--azul) !important;
+
+  font-size: 0.71rem !important;
+  font-weight: 600 !important;
+
+  line-height: 1.2 !important;
+
+  text-decoration: none !important;
+
+  white-space: nowrap;
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.document-number:hover {
+  border-color: rgba(230, 140, 89, 0.65);
+
+  background-color: #fff8f3;
+
+  color: #b85f2d !important;
+
+  text-decoration: none !important;
+
+  transform: translateY(-1px);
+}
+
+
+.document-number:focus-visible {
+  outline: 3px solid rgba(230, 140, 89, 0.35);
+
+  outline-offset: 2px;
+}
+
+
+/* DOCUMENTO CON DESCRIPCIÓN */
+
+.document-row {
+  display: flex;
+  align-items: flex-start;
+
+  flex-wrap: wrap;
+
+  gap: 9px 12px;
+}
+
+
+.document-description {
+  flex: 1 1 230px;
+
+  margin: 3px 0 0;
+
+  color: var(--gris-texto);
+
+  font-size: 0.72rem;
+
+  line-height: 1.55;
+}
+
+
+/* ==================================================
    ENLACES DE DOCUMENTOS
 ================================================== */
 
@@ -610,12 +672,6 @@
 }
 
 
-/*
-  Mientras no tengamos el href oficial verificado,
-  la referencia se muestra con la misma jerarquía
-  visual que tendrá posteriormente el enlace.
-*/
-
 .document-reference {
   color: var(--azul);
 
@@ -631,16 +687,33 @@
 ================================================== */
 
 .plan-record {
-  padding: 13px 0;
+  padding: 10px 0;
 }
 
+
+/* El primer plan arranca sin sumar espacio superior */
 
 .plan-record:first-of-type {
-  padding-top: 2px;
+  padding-top: 0;
 }
 
 
+/* El último plan no suma espacio inferior */
+
+.plan-record:last-child {
+  padding-bottom: 0;
+}
+
+
+/*
+  Cuando hay dos planes seguidos:
+  la línea queda exactamente en el medio del espacio.
+*/
+
 .plan-record + .plan-record {
+  margin-top: 10px;
+  padding-top: 10px;
+
   border-top: 1px solid #e7ebef;
 }
 
@@ -856,15 +929,13 @@
 
 @media (max-width: 900px) {
 
-  .plans-hero__layout {
-    grid-template-columns: 1fr 0.8fr;
-
-    gap: 35px;
+  .plans-hero {
+    padding: 32px 0 38px;
   }
 
 
-  .plans-hero__image {
-    height: 250px;
+  .plans-section {
+    padding-top: 52px;
   }
 
 }
@@ -895,24 +966,24 @@
 @media (max-width: 640px) {
 
   .plans-hero {
-    padding: 30px 0 43px;
+    padding: 27px 0 34px;
   }
 
 
   .plans-back {
-    margin-bottom: 24px;
+    margin-bottom: 23px;
   }
 
 
-  .plans-hero__layout {
-    grid-template-columns: 1fr;
+  .plans-hero__label {
+    margin-bottom: 8px;
 
-    gap: 28px;
+    font-size: 0.67rem;
   }
 
 
   .plans-hero h1 {
-    font-size: 2.35rem;
+    font-size: 2.15rem;
   }
 
 
@@ -925,17 +996,10 @@
   }
 
 
-  .plans-hero__image {
-    height: 210px;
-
-    border-radius: 13px;
-  }
-
-
   /* SECCIÓN */
 
   .plans-section {
-    padding: 48px 0 55px;
+    padding: 45px 0 55px;
   }
 
 
@@ -1045,8 +1109,14 @@
   }
 
 
+  /*
+    Mismo padding que escritorio.
+    Antes acá tenías 16px y por eso los espacios
+    no quedaban realmente iguales.
+  */
+
   .career-info {
-    padding: 16px 0;
+    padding: 15px 0;
   }
 
 
@@ -1062,6 +1132,20 @@
     align-items: flex-start;
 
     gap: 5px;
+  }
+
+
+  .document-row {
+    flex-direction: column;
+
+    gap: 8px;
+  }
+
+
+  .document-description {
+    flex: none;
+
+    margin-top: 0;
   }
 
 }
