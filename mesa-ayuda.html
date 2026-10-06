@@ -624,6 +624,10 @@
 
         label: "Quiero ingresar",
 
+        email: "ingreso@uns.edu.ar",
+
+        subject: "Nueva consulta - Mesa de Ayuda DGGA - Ingreso",
+
         reasons: [
 
           {
@@ -675,6 +679,10 @@
 
         label: "Estoy cursando",
 
+        email: "dgac@uns.edu.ar",
+
+        subject: "Nueva consulta - Mesa de Ayuda DGGA - Cursando",
+
         reasons: [
 
           {
@@ -725,6 +733,10 @@
       egreso: {
 
         label: "Ya finalicé",
+
+        email: "titulos@uns.edu.ar",
+
+        subject: "Nueva consulta - Mesa de Ayuda DGGA - Egreso",
 
         reasons: [
 
@@ -922,22 +934,25 @@
 
       event.preventDefault();
 
-      if (!currentStage) {
+      if (!currentStage || !stages[currentStage]) {
         return;
       }
 
       const originalButtonContent = submitButton.innerHTML;
 
       submitButton.disabled = true;
-      submitButton.innerHTML = 'Enviando...';
+      submitButton.innerHTML = "Enviando...";
       formStatus.textContent = "Estamos enviando tu consulta...";
 
       try {
 
+        const stageData = stages[currentStage];
         const formData = new FormData(helpForm);
 
+        formData.set("_subject", stageData.subject);
+
         const response = await fetch(
-          "https://formsubmit.co/ajax/comunicacion.dgga@uns.edu.ar",
+          `https://formsubmit.co/ajax/${stageData.email}`,
           {
             method: "POST",
             body: formData,
