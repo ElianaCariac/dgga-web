@@ -6,13 +6,43 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- SEO -->
   <title>Dirección General de Gestión Académica | Universidad Nacional del Sur</title>
 
+  <meta name="description"
+    content="Información y orientación académica de la Universidad Nacional del Sur: ingreso, cursado, trámites, planes de estudio, títulos y egreso.">
+
+  <meta name="robots" content="index, follow">
+
+  <!-- OPEN GRAPH -->
+  <meta property="og:type" content="website">
+
+  <meta property="og:title" content="Gestión Académica | Universidad Nacional del Sur">
+
+  <meta property="og:description"
+    content="Información y orientación académica para acompañarte desde el ingreso hasta el egreso en la Universidad Nacional del Sur.">
+
+  <meta property="og:locale" content="es_AR">
+
+  <meta property="og:site_name" content="Dirección General de Gestión Académica | Universidad Nacional del Sur">
+
+  <!--
+    Agregar cuando esté definida la URL institucional definitiva:
+
+    <link rel="canonical" href="URL-DEFINITIVA">
+
+    <meta property="og:url" content="URL-DEFINITIVA">
+
+    <meta property="og:image" content="URL-ABSOLUTA-DE-LA-IMAGEN">
+  -->
+
+  <!-- FUENTE -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+  <!-- ESTILOS -->
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="accessibility.css">
 </head>
@@ -54,12 +84,13 @@
 
       <div class="header__right">
 
-<a href="https://www.uns.edu.ar/" target="_blank" rel="noopener noreferrer"
-  aria-label="Ir al sitio web de la Universidad Nacional del Sur">
+        <a href="https://www.uns.edu.ar/" target="_blank" rel="noopener noreferrer"
+          aria-label="Ir al sitio web de la Universidad Nacional del Sur">
 
-  <img src="img/logo-uns.png" alt="Universidad Nacional del Sur" class="logo logo--uns">
+          <img src="img/logo-uns.png" alt="Universidad Nacional del Sur" class="logo logo--uns">
 
-</a>
+        </a>
+
         <button class="menu-button" type="button" aria-label="Abrir menú" aria-controls="main-nav"
           aria-expanded="false">
           ☰
@@ -553,8 +584,8 @@
 
           <!-- EMAIL -->
 
-          <a href="mailto:comunicacion.dgga@uns.edu.ar" class="social-link" aria-label="Enviar correo electrónico a la DGGA"
-            title="Correo electrónico">
+          <a href="mailto:comunicacion.dgga@uns.edu.ar" class="social-link"
+            aria-label="Enviar correo electrónico a la DGGA" title="Correo electrónico">
 
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path
@@ -568,6 +599,15 @@
       </div>
 
     </div>
+
+    <div class="footer__bottom">
+      <div class="container">
+        <p>
+          © <span id="current-year"></span> Universidad Nacional del Sur · Dirección General de Gestión Académica
+        </p>
+      </div>
+    </div>
+
 
   </footer>
 
@@ -865,9 +905,20 @@
       startSlider();
     }
 
+    /* AÑO AUTOMÁTICO DEL FOOTER */
+
+    const currentYear =
+      document.getElementById("current-year");
+
+    if (currentYear) {
+      currentYear.textContent =
+        new Date().getFullYear();
+    }
+
   </script>
 
-<script src="accessibility.js"></script>
+  <script src="accessibility.js"></script>
+
 </body>
 
 </html>
