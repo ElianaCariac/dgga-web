@@ -1548,3 +1548,21 @@ button {
   }
 
 }
+
+/* =========================
+   FOOTER · COPYRIGHT
+========================= */
+
+.footer__bottom {
+  margin-top: 32px;
+  padding: 18px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.footer__bottom p {
+  margin: 0;
+  text-align: center;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  opacity: 0.75;
+}
