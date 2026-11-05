@@ -1,0 +1,669 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solicitud de trámites académicos | Universidad Nacional del Sur</title>
+  <meta name="description" content="Solicitud de trámites académicos de la Dirección General de Gestión Académica de la Universidad Nacional del Sur.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Solicitud de trámites académicos | Universidad Nacional del Sur">
+  <meta property="og:description" content="Consultá requisitos y completá solicitudes de trámites académicos de la UNS.">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:site_name" content="Dirección General de Gestión Académica | Universidad Nacional del Sur">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="mesa-ayuda.css">
+  <link rel="stylesheet" href="tramites.css">
+  <link rel="stylesheet" href="accessibility.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container header__inner">
+    <a href="index.html" class="brand">
+      <img src="img/logo-dgga.png" alt="Dirección General de Gestión Académica" class="logo logo--dgga">
+    </a>
+
+    <nav class="nav" id="main-nav" aria-label="Navegación principal">
+      <a href="index.html">Inicio</a>
+      <a href="dgga.html">DGGA</a>
+      <a href="mesa-ayuda.html">Mesa de Ayuda</a>
+    </nav>
+
+    <div class="header__right">
+      <a href="https://www.uns.edu.ar/" class="header__uns-link" target="_blank" rel="noopener noreferrer" aria-label="Ir al sitio web de la Universidad Nacional del Sur">
+        <img src="img/logo-uns.png" alt="Universidad Nacional del Sur" class="logo logo--uns">
+      </a>
+      <button class="menu-button" type="button" aria-label="Abrir menú" aria-controls="main-nav" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="help-hero tramites-hero">
+    <div class="help-hero__overlay"></div>
+    <div class="container help-hero__content">
+      <p class="help-hero__eyebrow">Gestiones académicas</p>
+      <h1>Solicitud de trámites</h1>
+    </div>
+  </section>
+
+  <section class="help-start">
+    <div class="container help-start__container">
+
+      <p class="help-start__intro">Seleccioná el trámite que necesitás realizar. Vas a encontrar sus requisitos y el formulario correspondiente.</p>
+
+      <div class="help-progress">
+        <span class="help-progress__number">01</span>
+        <span class="help-progress__text">Seleccioná el trámite</span>
+      </div>
+
+      <div class="help-start__heading">
+        <h2>¿Qué trámite necesitás realizar?</h2>
+      </div>
+
+      <div class="help-form__group">
+        <div class="help-form__select-wrap">
+          <label class="tramites-label" for="tramite">Trámite <span class="help-form__required-mark" aria-hidden="true">*</span></label>
+          <select id="tramite" required>
+            <option value="">Seleccioná una opción</option>
+            <option value="pase">Reconocimiento de materias por pase de Universidad</option>
+            <option value="equivalencias">Reconocimiento de materias de otra Universidad</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="tramite-contenido" hidden>
+        <div class="help-progress">
+          <span class="help-progress__number">02</span>
+          <span class="help-progress__text">Información y requisitos</span>
+        </div>
+
+        <div class="help-start__heading">
+          <h2 id="tramite-titulo"></h2>
+          <p id="tramite-descripcion"></p>
+        </div>
+
+        <div id="info-pase" class="tramites-info" hidden>
+          <h3>¿Qué es?</h3>
+          <p>Es una certificación de tu historia académica completa que comprende: analítico con materias, notas, fechas, promedios, avance de carrera, sanciones disciplinarias, escala de calificación; plan de estudio y programas de asignaturas aprobadas (materias con final aprobado).</p>
+
+          <h3>¿Cómo inicio el trámite?</h3>
+          <ol>
+            <li>Completá el formulario de abajo.</li>
+            <li>Pagá el arancel que corresponda. Datos para la transferencia: BANCO PATAGONIA - CUENTA CORRIENTE Nº: 539991087 - CBU: 0340053100539991087009. <strong>El pago es exclusivamente en pesos argentinos.</strong></li>
+            <li>Adjuntá una foto de tu DNI y el comprobante de pago junto con la solicitud.</li>
+          </ol>
+
+          <h3>¿Cómo recibo el certificado?</h3>
+          <p>Lo vas a recibir en tu casilla de mail.</p>
+
+          <div class="tramites-notice">
+            <strong>ARANCELES</strong>
+            <p>Certificación para ser presentada a nivel nacional: $55.000</p>
+            <p>Certificación para ser presentada en el extranjero: $110.000</p>
+          </div>
+        </div>
+
+        <div id="info-equivalencias" class="tramites-info" hidden>
+          <h3>¿Qué es?</h3>
+          <p>Es la solicitud de reconocimiento de asignaturas aprobadas en otra institución educativa para el otorgamiento de equivalencias en alguna carrera de la UNS. Este trámite se inicia en el Departamento de Certificaciones y finaliza en el Departamento Académico al cual pertenece la asignatura solicitada. Es el Consejo de ese Departamento el órgano que decidirá si te otorgan o no la equivalencia.</p>
+
+          <h3>¿Qué requisitos se deben cumplir?</h3>
+          <ol>
+            <li>Ser alumno/a de la UNS (primero tenés que iniciar el trámite de ingreso y obtener el número de legajo).</li>
+            <li>Ser alumno/a proveniente de otra Universidad Nacional, provincial o privada reconocida por el Estado Nacional e institutos universitarios estatales o privados reconocidos por el Estado.</li>
+            <li>Si sos alumno/a proveniente de una institución NO Universitaria podés pedir equivalencias siempre que exista un Convenio de articulación entre la UNS y esa institución.</li>
+            <li>No podés solicitar equivalencias en la UNS si te faltan menos de 5 materias para finalizar la carrera en la Universidad de la cual provenís.</li>
+          </ol>
+
+          <h3>¿Qué documentación tengo que presentar?</h3>
+          <ul>
+            <li>Certificado analítico donde consten las asignaturas aprobadas y desaprobadas, con fecha, calificación, libro, folio, tomo o acta de registro en la otra Universidad.</li>
+            <li>Constancia de no poseer sanciones disciplinarias en curso.</li>
+            <li>Plan de estudio en el que estabas inscripto/a y los programas de asignaturas con su bibliografía.</li>
+            <li>Si vas a seguir idéntica o similar carrera tenés que presentar una constancia de cancelación de matrícula.</li>
+          </ul>
+
+          <div class="tramites-notice">
+            <strong>IMPORTANTE</strong>
+            <p>Toda la documentación debe estar foliada y firmada digitalmente por la autoridad académica competente de la Universidad de origen y presentarse unificada en un solo archivo PDF.</p>
+          </div>
+
+          <h3>¿Cómo inicio el trámite?</h3>
+          <ol>
+            <li>Completá el formulario de abajo.</li>
+            <li>Adjuntá una foto de tu DNI y la documentación académica en un único archivo PDF.</li>
+          </ol>
+
+          <h3>¿Cómo me entero de la resolución?</h3>
+          <p>El Departamento Académico te notificará por mail la Resolución definitiva del Consejo Departamental.</p>
+
+          <h3>Alumnos/as provenientes de Universidades extranjeras</h3>
+          <p>Presentar la misma documentación que los/las provenientes de instituciones argentinas, debiendo agregar:</p>
+          <ul>
+            <li>La escala de calificaciones vigentes de la Universidad de origen.</li>
+            <li>Toda la documentación debe estar previamente certificada por la Universidad extranjera y legalizada por un Ministerio de Educación o autoridad similar del país de origen. Además, se debe realizar un trámite de convalidación o revalidación, dependiendo del país de origen.</li>
+            <li>Cuando la documentación esté en idioma extranjero, deberá ser previamente traducida al castellano por un Traductor Público Nacional.</li>
+          </ul>
+        </div>
+
+        <div class="help-progress">
+          <span class="help-progress__number">03</span>
+          <span class="help-progress__text">Completá tu solicitud</span>
+        </div>
+
+        <form id="tramites-form" class="help-form" enctype="multipart/form-data">
+          <div class="help-form__accent" aria-hidden="true"></div>
+
+          <input type="hidden" name="Trámite" id="form-tramite">
+          <input type="hidden" name="_subject" id="form-asunto">
+          <input type="hidden" name="_template" value="table">
+
+          <div class="help-form__section">
+            <div class="help-form__section-heading">
+              <p class="help-form__section-eyebrow">Tus datos</p>
+              <h3>Datos personales y de contacto</h3>
+              <p>Completá los datos correspondientes a tu solicitud.</p>
+            </div>
+
+            <div class="help-form__data-grid">
+              <div class="help-form__field">
+                <label for="nombre">Apellido y nombre <span class="help-form__required-mark" aria-hidden="true">*</span></label>
+                <input id="nombre" name="Apellido y nombre" required autocomplete="name">
+              </div>
+              <div class="help-form__field">
+                <label for="lu">N.º de LU <span class="help-form__required-mark" aria-hidden="true">*</span></label>
+                <input id="lu" name="Número de LU" required>
+              </div>
+              <div class="help-form__field">
+                <label for="dni">N.º de DNI <span class="help-form__required-mark" aria-hidden="true">*</span></label>
+                <input id="dni" name="DNI" required>
+              </div>
+              <div class="help-form__field">
+                <label for="email">Correo electrónico <span class="help-form__required-mark" aria-hidden="true">*</span></label>
+                <input type="email" id="email" name="email" autocomplete="email" required>
+              </div>
+              <div class="help-form__field">
+                <label for="celular">Celular <span class="help-form__required-mark" aria-hidden="true">*</span></label>
+                <input type="tel" id="celular" name="Celular" autocomplete="tel" required>
+              </div>
+            </div>
+          </div>
+
+          <div id="campos-pase" hidden>
+            <div class="help-form__section">
+              <div class="help-form__section-heading">
+                <p class="help-form__section-eyebrow">Datos de la certificación</p>
+                <h3>Información de la solicitud</h3>
+                <p>La certificación contendrá el último plan de estudio en el que estás inscripto.</p>
+              </div>
+
+              <div class="help-form__data-grid">
+                <div class="help-form__field">
+                  <label for="carreras-pase">Carrera/s <span class="help-form__required-mark" aria-hidden="true">*</span></label>
+                  <input id="carreras-pase" name="Carrera/s" required>
+                </div>
+                <div class="help-form__field">
+                  <label for="institucion-destino">Institución de destino <span class="help-form__required-mark" aria-hidden="true">*</span></label>
+                  <input id="institucion-destino" name="Institución de destino" required>
+                </div>
+              </div>
+
+              <div id="preguntas-pase" class="tramites-questions"></div>
+
+              <div class="help-form__field" id="detalle-programas-wrap" hidden>
+                <label for="detalle-programas">Detallá cuáles programas necesitás <span class="help-form__required-mark" aria-hidden="true">*</span></label>
+                <textarea id="detalle-programas" name="Programas solicitados" rows="3"></textarea>
+              </div>
+
+              <div class="help-form__field">
+                <label for="observaciones-pase">Observaciones</label>
+                <textarea id="observaciones-pase" name="Observaciones" rows="3"></textarea>
+              </div>
+
+              <fieldset class="tramites-fieldset">
+                <legend>Destino de la certificación <span class="help-form__required-mark" aria-hidden="true">*</span></legend>
+                <label><input type="radio" name="Destino de la certificación" value="Nacional" required> Nacional — $55.000</label>
+                <label><input type="radio" name="Destino de la certificación" value="Extranjero" required> Extranjero — $110.000</label>
+              </fieldset>
+            </div>
+
+            <div class="help-form__section">
+              <div class="help-form__section-heading">
+                <p class="help-form__section-eyebrow">Documentación</p>
+                <h3>Archivos adjuntos</h3>
+              </div>
+              <div class="help-form__field">
+                <label for="dni-pase">Foto del DNI (imagen o PDF) <span class="help-form__required-mark" aria-hidden="true">*</span></label>
+                <input type="file" id="dni-pase" name="DNI adjunto" accept="image/*,.pdf" required>
+              </div>
+              <div class="help-form__field">
+                <label for="pago-pase">Comprobante de pago (imagen o PDF) <span class="help-form__required-mark" aria-hidden="true">*</span></label>
+                <input type="file" id="pago-pase" name="Comprobante de pago" accept="image/*,.pdf" required>
+              </div>
+            </div>
+          </div>
+
+          <div id="campos-equivalencias" hidden>
+            <div class="help-form__section">
+              <div class="help-form__section-heading">
+                <p class="help-form__section-eyebrow">Datos académicos</p>
+                <h3>Instituciones y carreras</h3>
+              </div>
+
+              <div class="help-form__data-grid">
+                <div class="help-form__field">
+                  <label for="universidad-origen">Universidad de origen <span class="help-form__required-mark" aria-hidden="true">*</span></label>
+                  <input id="universidad-origen" name="Universidad de origen" required>
+                </div>
+                <div class="help-form__field">
+                  <label for="carrera-origen">Carrera de la universidad de origen <span class="help-form__required-mark" aria-hidden="true">*</span></label>
+                  <input id="carrera-origen" name="Carrera de origen" required>
+                </div>
+                <div class="help-form__field">
+                  <label for="carrera-uns">Carrera de la UNS <span class="help-form__required-mark" aria-hidden="true">*</span></label>
+                  <input id="carrera-uns" name="Carrera de la UNS" required>
+                </div>
+              </div>
+            </div>
+
+            <div class="help-form__section">
+              <div class="help-form__section-heading">
+                <p class="help-form__section-eyebrow">Solicitud de equivalencias</p>
+                <h3>Materias para las que solicitás equivalencias</h3>
+                <p>Agregá las materias aprobadas en origen y las correspondientes asignaturas de la UNS.</p>
+              </div>
+
+              <div id="materias-lista"></div>
+              <button type="button" class="tramites-add" id="agregar-materia">+ Agregar otra materia</button>
+            </div>
+
+            <div class="help-form__section">
+              <div class="help-form__section-heading">
+                <p class="help-form__section-eyebrow">Documentación</p>
+                <h3>Archivos adjuntos</h3>
+              </div>
+              <div class="help-form__field">
+                <label for="dni-equivalencias">Foto del DNI (imagen o PDF) <span class="help-form__required-mark" aria-hidden="true">*</span></label>
+                <input type="file" id="dni-equivalencias" name="DNI adjunto" accept="image/*,.pdf" required>
+              </div>
+              <div class="help-form__field">
+                <label for="academico-pdf">Documentación académica unificada en un único PDF <span class="help-form__required-mark" aria-hidden="true">*</span></label>
+                <input type="file" id="academico-pdf" name="Documentación académica" accept=".pdf,application/pdf" required>
+              </div>
+            </div>
+          </div>
+
+          <div class="help-form__footer">
+            <p class="help-form__required" id="form-status" role="status" aria-live="polite">
+              <span class="help-form__required-mark" aria-hidden="true">*</span> Los campos indicados son obligatorios.
+            </p>
+            <button type="submit" class="help-form__submit" id="submit-button">
+              Enviar solicitud <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__info">
+      <h2>Dirección General de Gestión Académica (DGGA)</h2>
+      <p class="footer__university">Universidad Nacional del Sur</p>
+      <p class="footer__data">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 10.2A3.2 3.2 0 1 1 12 5.8a3.2 3.2 0 0 1 0 6.4Z"/>
+        </svg>
+        <span>Av. Alem 1015 · (B8000COL)</span>
+      </p>
+      <p class="footer__data">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6.6 10.8a15.3 15.3 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.3 1.1.4 2.2.6 3.4.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.5 21 3 13.5 3 4.2c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.3.6 3.4.1.4 0 .8-.3 1l-2.2 2.2Z"/>
+        </svg>
+        <span>+54 291 4595118</span>
+      </p>
+    </div>
+
+    <div class="footer__contact">
+      <p class="footer__title">Contacto y redes</p>
+      <div class="footer__socials">
+        <a href="https://api.whatsapp.com/send?phone=542915063774" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Soy Alumno UNS" title="WhatsApp">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.966-.94 1.164-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.009-.371-.011-.57-.011-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479s1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.693.625.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.004 21.785h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.981.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.002-5.45 4.438-9.887 9.892-9.887 2.641.001 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 7.001c-.003 5.45-4.439 9.881-9.889 9.881"/>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/soyalumnouns" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram Soy Alumno UNS" title="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm10.5 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/>
+          </svg>
+        </a>
+        <a href="https://www.facebook.com/soyalumno.UNS/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook Soy Alumno UNS" title="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M13.5 22v-9h3l.5-3h-3.5V8.1c0-.9.3-1.6 1.7-1.6H17V3.8c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.5V10H7v3h3v9h3.5Z"/>
+          </svg>
+        </a>
+        <a href="https://linktr.ee/gestionacademica" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Linktree Gestión Académica" title="Linktree">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M11 21v-7.2L8.5 16.3 7 14.8l4-4V8.3L7.5 11.8 6 10.3 10.3 6H7.8V4h3.2V1h2v3h3.2v2h-2.5l4.3 4.3-1.5 1.5L13 8.3v2.5l4 4-1.5 1.5-2.5-2.5V21Z"/>
+          </svg>
+        </a>
+        <a href="https://www.youtube.com/@soyalumnoUNS" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="YouTube Soy Alumno UNS" title="YouTube">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/>
+          </svg>
+        </a>
+        <a href="mailto:comunicacion.dgga@uns.edu.ar" class="social-link" aria-label="Enviar correo electrónico a la DGGA" title="Correo electrónico">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <div class="container">
+      <p>© <span id="current-year"></span> Universidad Nacional del Sur · Dirección General de Gestión Académica</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const menuButton = document.querySelector(".menu-button");
+  const navigation = document.querySelector(".nav");
+  const navigationLinks = document.querySelectorAll(".nav a");
+
+  function closeMenu() {
+    navigation.classList.remove("nav--open");
+    menuButton.setAttribute("aria-expanded", "false");
+    menuButton.setAttribute("aria-label", "Abrir menú");
+    menuButton.textContent = "☰";
+  }
+
+  menuButton.addEventListener("click", function () {
+    const isOpen = navigation.classList.toggle("nav--open");
+    menuButton.setAttribute("aria-expanded", isOpen);
+    menuButton.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
+    menuButton.textContent = isOpen ? "×" : "☰";
+  });
+
+  navigationLinks.forEach(function (link) {
+    link.addEventListener("click", closeMenu);
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") closeMenu();
+  });
+
+  window.addEventListener("resize", function () {
+    if (window.innerWidth > 640) closeMenu();
+  });
+</script>
+
+<script>
+(function () {
+  const selector = document.getElementById("tramite");
+  const contenido = document.getElementById("tramite-contenido");
+  const form = document.getElementById("tramites-form");
+
+  const nombres = {
+    pase: "Reconocimiento de materias por pase de Universidad",
+    equivalencias: "Reconocimiento de materias de otra Universidad"
+  };
+
+  const asuntos = {
+    pase: "Certificación para Pase de Universidad",
+    equivalencias: "Solicitud de equivalencias externas"
+  };
+
+  const preguntas = [
+    "¿Sos estudiante regular?",
+    "¿Dejás de estudiar en la UNS?",
+    "¿Necesitás una constancia de cancelación de matrícula?",
+    "¿Necesitás TODOS los programas de materias aprobadas?",
+    "¿Necesitás SOLO algunos programas?"
+  ];
+
+  const preguntasWrap = document.getElementById("preguntas-pase");
+
+  preguntas.forEach(function (pregunta, i) {
+    const fieldset = document.createElement("fieldset");
+    fieldset.className = "tramites-fieldset";
+
+    const legend = document.createElement("legend");
+    legend.append(
+      document.createTextNode(pregunta + " "),
+      Object.assign(document.createElement("span"), {
+        className: "help-form__required-mark",
+        textContent: "*"
+      })
+    );
+    fieldset.appendChild(legend);
+
+    ["Sí", "No"].forEach(function (op) {
+      const label = document.createElement("label");
+      const input = document.createElement("input");
+
+      input.type = "radio";
+      input.name = pregunta;
+      input.value = op;
+      input.required = true;
+
+      if (i === 4) {
+        input.addEventListener("change", toggleDetalle);
+      }
+
+      label.append(input, " " + op);
+      fieldset.appendChild(label);
+    });
+
+    preguntasWrap.appendChild(fieldset);
+  });
+
+  function toggleDetalle() {
+    const si = form.querySelector(
+      'input[name="¿Necesitás SOLO algunos programas?"][value="Sí"]'
+    );
+
+    const activo = si && si.checked;
+    document.getElementById("detalle-programas-wrap").hidden = !activo;
+    document.getElementById("detalle-programas").required = !!activo;
+  }
+
+  let nextMateria = 0;
+  const lista = document.getElementById("materias-lista");
+
+  function agregarMateria() {
+    const i = ++nextMateria;
+    const div = document.createElement("div");
+    div.className = "tramites-materia";
+
+    const asterisco = '<span class="help-form__required-mark" aria-hidden="true">*</span>';
+
+    div.innerHTML = `
+      <div class="tramites-materia-head">
+        <strong>Materia ${i}</strong>
+        <button type="button" class="tramites-remove">Quitar</button>
+      </div>
+
+      <div class="help-form__data-grid">
+        <div class="help-form__field">
+          <label for="materia-origen-${i}">Materia aprobada en universidad de origen ${asterisco}</label>
+          <input id="materia-origen-${i}" name="Materia ${i} - Origen" required>
+        </div>
+
+        <div class="help-form__field">
+          <label for="registro-${i}">Libro / Folio / Acta ${asterisco}</label>
+          <input id="registro-${i}" name="Materia ${i} - Libro Folio Acta" required>
+        </div>
+
+        <div class="help-form__field">
+          <label for="fecha-${i}">Fecha ${asterisco}</label>
+          <input id="fecha-${i}" name="Materia ${i} - Fecha" placeholder="DD/MM/AAAA" required>
+        </div>
+
+        <div class="help-form__field">
+          <label for="nota-${i}">Calificación ${asterisco}</label>
+          <input id="nota-${i}" name="Materia ${i} - Calificación" required>
+        </div>
+
+        <div class="help-form__field">
+          <label for="codigo-${i}">Código de asignatura UNS ${asterisco}</label>
+          <input id="codigo-${i}" name="Materia ${i} - Código UNS" required>
+        </div>
+
+        <div class="help-form__field">
+          <label for="nombre-uns-${i}">Nombre de asignatura UNS ${asterisco}</label>
+          <input id="nombre-uns-${i}" name="Materia ${i} - Nombre UNS" required>
+        </div>
+      </div>
+    `;
+
+    div.querySelector(".tramites-remove").addEventListener("click", function () {
+      if (lista.children.length > 1) {
+        div.remove();
+        actualizarQuitar();
+      }
+    });
+
+    lista.appendChild(div);
+    actualizarQuitar();
+  }
+
+  function actualizarQuitar() {
+    lista.querySelectorAll(".tramites-remove").forEach(function (b) {
+      b.disabled = lista.children.length === 1;
+    });
+  }
+
+  document.getElementById("agregar-materia").addEventListener("click", agregarMateria);
+  agregarMateria();
+
+  function seleccionar() {
+    const tipo = selector.value;
+    contenido.hidden = !nombres[tipo];
+    form.reset();
+
+    document.getElementById("detalle-programas-wrap").hidden = true;
+    document.getElementById("detalle-programas").required = false;
+
+    if (!nombres[tipo]) return;
+
+    document.getElementById("tramite-titulo").textContent = nombres[tipo];
+
+    document.getElementById("tramite-descripcion").textContent =
+      tipo === "pase"
+        ? "Solicitud de certificación de historia académica para pase de universidad."
+        : "Solicitud de reconocimiento de asignaturas aprobadas en otra institución.";
+
+    document.getElementById("form-tramite").value = nombres[tipo];
+    document.getElementById("form-asunto").value = asuntos[tipo];
+
+    ["pase", "equivalencias"].forEach(function (t) {
+      document.getElementById("info-" + t).hidden = t !== tipo;
+
+      const grupo = document.getElementById("campos-" + t);
+      grupo.hidden = t !== tipo;
+
+      grupo.querySelectorAll("input,textarea,select").forEach(function (el) {
+        el.disabled = t !== tipo;
+      });
+    });
+
+    document.getElementById("form-status").innerHTML =
+      '<span class="help-form__required-mark">*</span> Los campos indicados son obligatorios.';
+  }
+
+  selector.addEventListener("change", seleccionar);
+
+  const estado = document.getElementById("form-status");
+  const boton = document.getElementById("submit-button");
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    if (!nombres[selector.value]) {
+      estado.textContent = "Seleccioná un trámite antes de enviar la solicitud.";
+      selector.focus();
+      return;
+    }
+
+    if (!form.reportValidity()) return;
+
+    const textoOriginal = boton.innerHTML;
+    boton.disabled = true;
+    boton.textContent = "Enviando...";
+    estado.textContent = "Estamos enviando tu solicitud...";
+
+    try {
+      const datos = new FormData(form);
+      datos.set("_subject", asuntos[selector.value]);
+
+      const respuesta = await fetch(
+        "https://formsubmit.co/ajax/elianacariac@gmail.com",
+        {
+          method: "POST",
+          body: datos,
+          headers: {
+            "Accept": "application/json"
+          }
+        }
+      );
+
+      if (!respuesta.ok) {
+        throw new Error("Error HTTP " + respuesta.status);
+      }
+
+      const resultado = await respuesta.json();
+
+      if (resultado.success !== true && resultado.success !== "true") {
+        throw new Error("El servicio no confirmó el envío.");
+      }
+
+      form.reset();
+      estado.textContent = "Tu solicitud fue enviada correctamente.";
+
+      if (selector.value === "equivalencias") {
+        lista.innerHTML = "";
+        nextMateria = 0;
+        agregarMateria();
+      }
+
+      document.getElementById("detalle-programas-wrap").hidden = true;
+      document.getElementById("detalle-programas").required = false;
+
+    } catch (error) {
+      console.error("Error al enviar el trámite:", error);
+      estado.textContent =
+        "No se pudo enviar la solicitud. Revisá los archivos adjuntos e intentá nuevamente.";
+
+    } finally {
+      boton.disabled = false;
+      boton.innerHTML = textoOriginal;
+    }
+  });
+
+  const year = document.getElementById("current-year");
+  if (year) year.textContent = new Date().getFullYear();
+
+  const params = new URLSearchParams(location.search);
+  if (nombres[params.get("tramite")]) {
+    selector.value = params.get("tramite");
+    seleccionar();
+  }
+})();
+</script>
+
+<script src="accessibility.js"></script>
+</body>
+</html>

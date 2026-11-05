@@ -1,0 +1,219 @@
+
+/* ==========================================
+   TRÁMITES ACADÉMICOS
+   Complementa styles.css y mesa-ayuda.css
+========================================== */
+
+/* HERO */
+
+.tramites-hero {
+  background-image: linear-gradient(
+    115deg,
+    #164780,
+    #1a58a3
+  );
+}
+
+/* SELECTOR DE TRÁMITE */
+
+.tramites-label {
+  display: block;
+  margin: 0 0 12px;
+  font-size: .9rem;
+  font-weight: 600;
+  color: #26384a;
+}
+
+#tramite-contenido {
+  margin-top: 42px;
+}
+
+/* INFORMACIÓN DEL TRÁMITE */
+
+.tramites-info {
+  margin: 0 0 44px;
+  padding: 28px 32px;
+  border: 1px solid #dce4ec;
+  border-radius: 14px;
+  background: #f8fafc;
+  color: #465667;
+  font-size: .88rem;
+  line-height: 1.8;
+}
+
+.tramites-info h3 {
+  margin: 24px 0 8px;
+  color: #1a58a3;
+  font-size: 1.05rem;
+}
+
+.tramites-info h3:first-child {
+  margin-top: 0;
+}
+
+.tramites-info p {
+  margin: 0 0 12px;
+}
+
+.tramites-info ol,
+.tramites-info ul {
+  padding-left: 22px;
+  margin: 0 0 14px;
+}
+
+.tramites-info li {
+  margin-bottom: 7px;
+}
+
+/* AVISOS Y ACLARACIONES */
+
+.tramites-notice {
+  margin: 20px 0;
+  padding: 18px 20px;
+  border-left: 4px solid #e68c59;
+  border-radius: 8px;
+  background: #fff7f1;
+  font-size: .85rem;
+  line-height: 1.65;
+  color: #384b60;
+}
+
+.tramites-notice p {
+  margin: 6px 0;
+}
+
+.tramites-notice small {
+  display: block;
+  color: #687582;
+}
+
+/* PREGUNTAS Y OPCIONES */
+
+.tramites-fieldset {
+  border: 1px solid #dce4ec;
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin: 18px 0;
+  color: #26384a;
+}
+
+.tramites-fieldset legend {
+  font-weight: 600;
+  font-size: .88rem;
+  padding: 0 6px;
+}
+
+.tramites-fieldset label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 8px 20px 4px 0;
+  font-size: .87rem;
+  cursor: pointer;
+}
+
+.tramites-fieldset input {
+  accent-color: #1a58a3;
+}
+
+/* CAMPOS DE FORMULARIO */
+
+#campos-pase .help-form__field,
+#campos-equivalencias .help-form__field {
+  margin-bottom: 16px;
+}
+
+.help-form__field textarea {
+  display: block;
+  width: 100%;
+  min-height: 100px;
+  padding: 14px;
+  border: 1px solid #cfd9e3;
+  border-radius: 10px;
+  font: inherit;
+  resize: vertical;
+}
+
+.help-form__field input[type="file"] {
+  padding: 12px;
+  height: auto;
+  min-height: 52px;
+  cursor: pointer;
+}
+
+/* MATERIAS PARA EQUIVALENCIAS */
+
+.tramites-materia {
+  padding: 22px;
+  margin: 0 0 18px;
+  background: #f8fafc;
+  border: 1px solid #dce4ec;
+  border-radius: 12px;
+}
+
+.tramites-materia-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  color: #1a58a3;
+}
+
+/* BOTONES AGREGAR / QUITAR */
+
+.tramites-remove,
+.tramites-add {
+  border: 1px solid #b7cbe0;
+  background: #ffffff;
+  color: #1a58a3;
+  border-radius: 9px;
+  padding: 10px 15px;
+  font: inherit;
+  font-size: .82rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tramites-remove:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+}
+
+.tramites-add:hover,
+.tramites-remove:not(:disabled):hover {
+  background: #eaf2fb;
+}
+
+/* ASTERISCOS DE CAMPOS OBLIGATORIOS */
+
+.help-form__required-mark {
+  color: #c96e3c !important;
+  font-weight: 700;
+}
+
+/* ELEMENTOS OCULTOS */
+
+[hidden] {
+  display: none !important;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 640px) {
+
+  .tramites-info {
+    padding: 20px 18px;
+  }
+
+  .tramites-materia {
+    padding: 16px;
+  }
+
+  .tramites-fieldset label {
+    display: flex;
+    margin-right: 0;
+  }
+
+}
