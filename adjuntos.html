@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prueba de adjuntos</title>
+</head>
+<body>
+
+  <h1>Prueba de FormSubmit</h1>
+
+  <form
+    action="https://formsubmit.co/elianacariac@gmail.com"
+    method="POST"
+    enctype="multipart/form-data"
+  >
+
+    <input
+      type="hidden"
+      name="_subject"
+      value="PRUEBA DE ADJUNTOS"
+    >
+
+    <label for="mensaje">Mensaje:</label>
+    <input
+      type="text"
+      id="mensaje"
+      name="mensaje"
+      value="Prueba de envío"
+      required
+    >
+
+    <p>
+      <label for="archivo1">Archivo 1:</label>
+      <input
+        type="file"
+        id="archivo1"
+        name="attachment"
+        required
+      >
+    </p>
+
+    <p>
+      <label for="archivo2">Archivo 2:</label>
+      <input
+        type="file"
+        id="archivo2"
+        name="attachment2"
+        required
+      >
+    </p>
+
+    <button type="submit">Enviar prueba</button>
+
+  </form>
+
+</body>
+</html>
