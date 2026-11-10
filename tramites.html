@@ -171,8 +171,6 @@
 
           <input type="hidden" name="Trámite" id="form-tramite">
           <input type="hidden" name="_subject" id="form-asunto">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="true">
 
           <div class="help-form__section">
             <div class="help-form__section-heading">
@@ -601,9 +599,38 @@
 
   // El formulario se envía directamente mediante su
   // action y method. No se utiliza fetch ni AJAX.
-  form.addEventListener("submit", function () {
-    document.getElementById("form-asunto").value =
-      asuntos[selector.value];
+  form.addEventListener("submit", function (event) {
+    const tipo = selector.value;
+    if (!nombres[tipo]) {
+      event.preventDefault();
+      selector.focus();
+      return;
+    }
+
+    document.getElementById("form-tramite").value = nombres[tipo];
+    document.getElementById("form-asunto").value = asuntos[tipo];
+
+    // Verificar los dos archivos antes de enviar a FormSubmit.
+    const ids = tipo === "pase"
+      ? ["dni-pase", "pago-pase"]
+      : ["dni-equivalencias", "academico-pdf"];
+    const archivos = ids.map(id => document.getElementById(id));
+    if (archivos.some(input => input.disabled || !input.files || input.files.length !== 1)) {
+      event.preventDefault();
+      document.getElementById("form-status").textContent =
+        "Seleccioná los dos archivos obligatorios antes de enviar.";
+      archivos.find(input => !input.files || input.files.length !== 1)?.focus();
+      return;
+    }
+
+    const bytes = archivos.reduce((total, input) => total + input.files[0].size, 0);
+    if (bytes > 10 * 1024 * 1024) {
+      event.preventDefault();
+      document.getElementById("form-status").textContent =
+        "Los archivos superan los 10 MB en conjunto. Reducí su tamaño e intentá nuevamente.";
+      return;
+    }
+    // Sin preventDefault: el navegador envía el formulario como multipart/form-data.
   });
 
   const year = document.getElementById("current-year");
